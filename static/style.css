@@ -1,0 +1,135 @@
+@import "./reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+
+:root {
+    --font-family: "Raleway", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background: #fbfbfb;
+}
+
+button {
+    border: 2px solid #000;
+    letter-spacing: 0.1em;
+    background: rgba(217, 217, 217, 0);
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 62%);
+}
+
+a:visited {
+    color: #000;
+}
+
+.none {
+    display: none !important;
+}
+
+/* Header */
+
+/* Navigation */
+
+.navy-item {
+    margin: 20px 0 0 40px;
+    
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    column-gap: 52px;
+    align-items: center;
+}
+
+.navy-item::after {
+    content: "";
+    right: 58px;
+    top: 0;
+    display: block;
+    position: absolute;
+    width: 37em;
+    height: 45em;
+
+    background-image: url("../img/header/header-img.png");
+    background-size: cover;
+
+    z-index: -1;
+}
+
+/* Main */
+
+/* About */
+
+#about-wrapper {
+    margin: 150px 0 0 123px;
+    width: 823px;
+    height: 338px;
+}
+
+#about-profession {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#about-name {
+    font-size: 128px;
+    font-weight: 500;
+
+    text-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+#about-call-to-action {
+    margin: 18px 0 0 123px;
+    width: 686px;
+    height: 364px;
+}
+
+#about-call-to-action-text {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#about-call-to-action-button {
+    margin: 90px 0 61px 0;
+}
+
+#about-call-to-action-button button {
+    padding: 36px 96px 36px 96px;
+    font-size: 24px;
+    font-weight: 600;
+    width: 346px;
+    height: 101px;
+}
+
+#about a{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#about-call-to-action::before {
+    content: "";
+    position: absolute;
+    left: 67px;
+    width: 2px;
+    height: 357px;
+    background-color: #000;
+}
+
+#about-call-to-action-button button::before {
+    content: "";
+    position: absolute;
+    left: 484px;
+    bottom: 76px;
+    width: 61px;
+    height: 2px;
+    background-color: #000;
+}
