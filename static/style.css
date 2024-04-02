@@ -14,8 +14,15 @@ button {
     border: 2px solid #000;
     width: 346px;
     height: 101px;
+
+    font-size: 24px;
+    font-weight: 600;
     letter-spacing: 0.1em;
+
     background: rgba(217, 217, 217, 0);
+    background: #fff;
+
+    transition: transform 0.6s ease;
 }
 
 a {
@@ -35,15 +42,12 @@ a:visited {
 }
 
 /* body::before {
-    content: "";
-    right: 0px;
-    margin-top: 1123px;
-    display: block;
+    content: url('../img/right-background-el.svg');
     position: absolute;
-
-    background-image: url("../img/right-background-el.svg");
-    background-size: auto, auto;
-
+    top: 1123px;
+    right: 0px;
+    width: 594.5px;
+    height: 1675px;
     z-index: -1;
 } */
 
@@ -83,6 +87,10 @@ header::after {
 
 /* About */
 
+#about {
+    display: block;
+}
+
 #about-wrapper {
     margin: 150px 0 0 123px;
     width: 823px;
@@ -98,7 +106,7 @@ header::after {
     font-size: 128px;
     font-weight: 500;
 
-    text-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 #about-call-to-action {
@@ -115,10 +123,6 @@ header::after {
 
 #about-call-to-action button {
     margin: 90px 0 61px 0;
-    padding: 36px 96px 36px 96px;
-    font-size: 24px;
-    font-weight: 600;
-    transition: transform 0.6s ease;
 }
 
 #about-call-to-action a{
@@ -170,14 +174,14 @@ header::after {
     height: 1030px;
 }
 
-#about-me-block h1 {
+#about-me-block h2 {
     position: absolute;
     margin: 20px 0 0 552px;
     display: flex;
 
     font-size: 96px;
     font-weight: 500;
-    text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #about-me-block p {
@@ -190,7 +194,7 @@ header::after {
     font-weight: 500;
     text-align: right;
     justify-content: right;
-    text-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 #about-me-block p:nth-of-type(1) br {
@@ -202,11 +206,7 @@ header::after {
 #about-me-block button {
     position: absolute;
     margin: 795px 0 0 600px;
-    padding: 36px 96px 36px 96px;
     float: right;
-    font-size: 24px;
-    font-weight: 600;
-    transition: transform 0.6s ease;
 }
 
 #about-me-block::after {
@@ -231,4 +231,201 @@ header::after {
 
 #about-me-block button:hover {
     transform: scale(1.05);
+}
+
+/* Service */
+
+#services h2 {
+    position: relative;
+    margin: 137px 0 100px 111px;
+    font-size: 96px;
+    font-weight: 500;
+
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#services h2::after {
+    content: "";
+    position: absolute;
+    margin: 60px 0px 0px 36px;
+    width: 1215px;
+    height: 2px;
+    background-color: #000;
+    pointer-events: none;
+}
+
+#services-wrapper {
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    /* height: 100vh; */
+}
+
+#women-haircut,
+#men-haircut,
+#coloring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    transition: transform 0.6s ease;
+}
+
+#women-haircut:hover,
+#men-haircut:hover,
+#coloring:hover {
+    transform: scale(1.05);
+}
+
+#women-haircut img,
+#men-haircut img,
+#coloring img {
+    border-radius: 10px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+#women-haircut button,
+#men-haircut button,
+#coloring button {
+    margin-top: 29px;
+}
+
+#women-haircut button:hover,
+#men-haircut button:hover,
+#coloring button:hover {
+    transform: scale(1.05);
+}
+
+/* Service prices */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: opacity 0.1s ease;
+}
+
+#prices-women-haircut,
+#prices-men-haircut,
+#prices-coloring {
+    position: fixed;
+    display: grid;
+    width: 1400px;
+    top: 0px;
+    right: 12.5%;
+    border-radius: 20px;
+    padding: 108px 140px 61px 140px;
+    background: #fbfbfb;
+    z-index: 3;
+    transition: opacity 0.1s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+#prices-women-haircut.none,
+#prices-men-haircut.none,
+#prices-coloring.none,
+#overlay.none {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#prices-women-haircut:not(.none),
+#prices-men-haircut:not(.none),
+#prices-coloring:not(.none),
+#overlay:not(.none) {
+    opacity: 1;
+}
+
+#prices-women-haircut h3,
+#prices-men-haircut h3,
+#prices-coloring h3{
+    margin-bottom: 86px;
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.service {
+    margin-bottom: 115px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-option {
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.top {
+    padding-top: 26px;
+}
+
+.name {
+    flex: 1;
+}
+
+.price {
+    margin-right: 10px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.currency {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+#prices-women-haircut button,
+#prices-men-haircut button,
+#prices-coloring button {
+    grid-template-columns: auto 1fr;
+    justify-self: end;
+}
+
+
+.line-horisontal::after {
+    content: "";
+    position: absolute;
+    margin: 57.5px 0px 57.5px 0px;
+    width: 1116px;
+    height: 2px;
+    background-color: #000;
+    pointer-events: none;
+}
+
+.line-horisontal-single-block::after {
+    content: "";
+    position: absolute;
+    margin: 100px 0px 57.5px 0px;
+    width: 1116px;
+    height: 2px;
+    background-color: #000;
+    pointer-events: none;
+}
+
+#prices-women-haircut button:hover,
+#prices-men-haircut button:hover,
+#prices-coloring button:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1920px) {
+    body {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
 }
