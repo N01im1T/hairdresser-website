@@ -1,0 +1,19 @@
+{
+    "images": [
+        {
+            "name": "fst-portfolio-img.png",
+            "alt": "Portfolio image_1",
+            "description": "Мелирование"
+        },
+        {
+            "name": "snd-portfolio-img.png",
+            "alt": "Portfolio image_2",
+            "description": "Окрашивание локанов"
+        },
+        {
+            "name": "thd-portfolio-img.png",
+            "alt": "Portfolio image_3",
+            "description": "Окрашивание локанов"
+        }
+    ]
+}

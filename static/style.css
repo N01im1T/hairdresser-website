@@ -309,7 +309,7 @@ header::after {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    transition: opacity 0.1s ease;
+    transition: opacity 0.5s ease-in;
 }
 
 #prices-women-haircut,
@@ -319,12 +319,12 @@ header::after {
     display: grid;
     width: 1400px;
     top: 0px;
-    right: 12.5%;
+    right: calc((100% - 1400px) / 2);
     border-radius: 20px;
     padding: 108px 140px 61px 140px;
     background: #fbfbfb;
     z-index: 3;
-    transition: opacity 0.1s ease;
+    transition: opacity 0.5s ease-in;
     opacity: 0;
     transform: scale(0.8);
 }
@@ -421,6 +421,24 @@ header::after {
 #prices-men-haircut button:hover,
 #prices-coloring button:hover {
     transform: scale(1.05);
+}
+
+/* Portfolio */
+
+#portfolio h2 {
+    display: flex;
+    margin: 77px 142px 91px;
+    justify-content: right;
+
+    font-size: 96px;
+    font-weight: 500;
+
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.slider {
+    max-height: 700px;
+    margin-bottom: 193px;
 }
 
 @media screen and (max-width: 1920px) {
