@@ -2,31 +2,31 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no">
     <title>Парикмахерская студия Lory Lavry</title>
     <link rel="shortcut icon" href="/img/static/favicon-32x32.png" type="image/png">
     <link rel="shortcut icon" href="/img/static/favicon-16x16.png" type="image/png">
     <link rel="apple-touch-icon" href="/img/static/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="navy-item">
             <nav>
                 <ul class="navbar">
-                    <li><a href="#top"><img src="/img/site-logo.svg" alt="site-logo"></a></li>
-                    <li><a href="#about-me">Обо мне</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#portfolio">Портфолио</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a><img src="/img/site-logo.svg" alt="site-logo"></a></li>
+                    <li><a id="to-about-me-nav">Обо мне</a></li>
+                    <li><a id="to-services-nav">Услуги</a></li>
+                    <li><a id="to-portfolio-nav">Портфолио</a></li>
+                    <li><a id="to-contacts-nav">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <div id="main-container">
-        <div id="about">
+        <section id="about">
             <div id="about-wrapper" itemscope itemtype="http://schema.org/HairSalon">
                 <div id="about-profession" itemprop="employees" itemtype="http://schema.org/Person">
                     <span itemprop="jobTitle" content="Парикмахер">
@@ -41,7 +41,7 @@
             </div>
             <div id="about-call-to-action" itemscope itemtype="http://schema.org/HairSalon">
                 <p>
-                    Скидка 10% на стрижку или окрашивание при при первом визите
+                    Скидка 10% на стрижку или окрашивание при первом визите
                 </p>
                 <button type="button">
                     Записаться
@@ -70,13 +70,13 @@
                         <br>
                         С моими работами вы можете ознакомиться в 
                     </p>
-                    <button href="#portfolio" type="button">
+                    <button id="to-portfolio">
                         Портфолио
                     </button>
                 </div>
             </div>
-        </div>
-        <div id="services">
+        </section>
+        <section id="services">
             <h2>
                 Услуги
             </h2>
@@ -506,24 +506,25 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div id="portfolio">
+        </section>
+        <section id="portfolio">
             <h2>
                 Портфолио
             </h2>
-            <div id="slider" itemscope itemtype="http://schema.org/ItemList">
-                
+            <div id="slider-container" class="slider" itemscope itemtype="http://schema.org/ItemList">
             </div>
-        </div>
-        <div id="call-to-action"></div>
-        <div id="contacts"></div>
+            <div id="prev" class="arrow prev"></div>
+            <div id="next" class="arrow next"></div>
+        </section>
+        <section id="call-to-action"></section>
+        <section id="contacts"></section>
     </div>
     <div id="footer">
         
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="/node_modules/slick-carousel/slick/slick.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer" deffer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="/js/main.js" defer></script>
 </body>
 </html>

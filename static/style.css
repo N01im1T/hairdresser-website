@@ -8,6 +8,7 @@
 body {
     font-family: var(--font-family);
     background: #fbfbfb;
+    overflow-x: hidden;
 }
 
 button {
@@ -41,7 +42,7 @@ a:visited {
     display: none !important;
 }
 
-/* body::before {
+body::before {
     content: url('../img/right-background-el.svg');
     position: absolute;
     top: 1123px;
@@ -49,7 +50,17 @@ a:visited {
     width: 594.5px;
     height: 1675px;
     z-index: -1;
-} */
+}
+
+body::after {
+    content: url('../img/left-background-el.svg');
+    position: absolute;
+    top: 2256px;
+    left: 0px;
+    width: 594.5px;
+    height: 1875px;
+    z-index: -1;
+}
 
 /* Header */
 
@@ -57,6 +68,7 @@ a:visited {
 
 .navy-item {
     margin: 20px 0 0 40px;
+    max-width: 100%;
 }
 
 .navbar {
@@ -66,6 +78,7 @@ a:visited {
     display: flex;
     column-gap: 52px;
     align-items: center;
+    cursor: pointer;
 }
 
 header::after {
@@ -89,6 +102,7 @@ header::after {
 
 #about {
     display: block;
+    max-width: 100%;
 }
 
 #about-wrapper {
@@ -436,9 +450,82 @@ header::after {
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* Portfolio slider */
+
+#portfolio {
+    position: relative;
+}
+
 .slider {
+    display: flex;
+    overflow: hidden;
     max-height: 700px;
     margin-bottom: 193px;
+    touch-action: pan-y;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    flex: 0 0 auto;
+    margin: 0 auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 98px;
+    height: 105px;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+}
+
+.arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* #slider-container::after {
+    content: url('../img/portfolio/slider/icon-left-arrrow.svg');
+    position: absolute;
+    top: 297px;
+    left: 30px;
+    width: 98px;
+    height: 105px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#slider-container::before {
+    content: url('../img/portfolio/slider/icon-right-arrrow.svg');
+    position: absolute;
+    top: 297px;
+    right: 30px;
+    width: 98px;
+    height: 105px;
+    z-index: 1;
+    cursor: pointer;
+} */
+
+/* .next,
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+} */
+
+.prev {
+    left: 30px;
+    background-image: url('../img/portfolio/slider/icon-left-arrrow.svg');
+}
+
+.next {
+    right: 30px;
+    background-image: url('../img/portfolio/slider/icon-right-arrrow.svg');
 }
 
 @media screen and (max-width: 1920px) {
