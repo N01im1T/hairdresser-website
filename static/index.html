@@ -8,8 +8,7 @@
     <link rel="shortcut icon" href="/img/static/favicon-16x16.png" type="image/png">
     <link rel="apple-touch-icon" href="/img/static/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body>
     <header>
@@ -81,15 +80,15 @@
                 Услуги
             </h2>
             <div id="services-wrapper">
-                <div id="women-haircut">
+                <div id="women-haircuts">
                     <img src="../img/services/price-women-haircut-img.png" alt="Женские стрижки">
-                    <button id="women-haircut-button" type="button">
+                    <button id="women-haircuts-button" type="button">
                         Женские стрижки
                     </button>
                 </div>
-                <div id="men-haircut">
+                <div id="men-haircuts">
                     <img src="../img/services/price-men-haircut-img.png" alt="Мужские стрижки">
-                    <button id="men-haircut-button" type="button">
+                    <button id="men-haircuts-button" type="button">
                         Мужские стрижки
                     </button>
                 </div>
@@ -101,8 +100,8 @@
                 </div>
             </div>
             <div id="prices" itemscope itemtype="http://schema.org/HairSalon">
-                <div id="overlay" class="none"></div>
-                <div id="prices-women-haircut" class="none" itemprop="department" itemscope itemtype="http://schema.org/Service">
+                <div id="overlay-women-haircuts" class="none">
+                <div id="prices-women-haircuts" class="none" itemprop="department" itemscope itemtype="http://schema.org/Service">
                     <meta itemprop="serviceType" content="WomenHaircuts">
                     <meta itemprop="description" content="Профессиональные женские стрижки">
                     <h3 itemprop="name">
@@ -205,7 +204,9 @@
                         Записаться
                     </button>
                 </div>
-                <div id="prices-men-haircut" class="none" itemprop="department" itemscope itemtype="http://schema.org/Service">
+                </div>
+                <div id="overlay-men-haircuts" class="none">
+                <div id="prices-men-haircuts" class="none" itemprop="department" itemscope itemtype="http://schema.org/Service">
                     <meta itemprop="serviceType" content="MenHaircuts">
                     <meta itemprop="description" content="Профессиональные мужские стрижки">
                     <h3 itemprop="name">
@@ -264,6 +265,8 @@
                         Записаться
                     </button>
                 </div>
+                </div>
+                <div id="overlay-coloring" class="none">
                 <div id="prices-coloring" class="none"  itemprop="department" itemscope itemtype="http://schema.org/Service">
                     <meta itemprop="serviceType" content="Coloring">
                     <meta itemprop="description" content="Профессиональное окрашивание">
@@ -505,6 +508,7 @@
                         Записаться
                     </button>
                 </div>
+                </div>
             </div>
         </section>
         <section id="portfolio">
@@ -512,18 +516,32 @@
                 Портфолио
             </h2>
             <div id="slider-container" class="slider" itemscope itemtype="http://schema.org/ItemList">
+                <div class="'splide__track'">
+                    <ul class="splide__list">
+                        
+                    </ul>
+                </div>
+                <div id="prev" class="arrow prev"></div>
+                <div id="next" class="arrow next"></div>
             </div>
-            <div id="prev" class="arrow prev"></div>
-            <div id="next" class="arrow next"></div>
         </section>
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide">Slide 01</li>
+                      <li class="splide__slide">Slide 02</li>
+                      <li class="splide__slide">Slide 03</li>
+                  </ul>
+            </div>
+          </section>
         <section id="call-to-action"></section>
         <section id="contacts"></section>
     </div>
     <div id="footer">
         
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer" deffer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="/js/main.js" defer></script>
 </body>

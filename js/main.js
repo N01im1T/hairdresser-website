@@ -59,44 +59,43 @@ $(document).ready(function(){
 
 // Service prices show/hide
 
-const womenHaircutButton = document.getElementById('women-haircut-button');
-const menHaircutButton = document.getElementById('men-haircut-button');
+const womenHaircutsButton = document.getElementById('women-haircuts-button');
+const menHaircutsButton = document.getElementById('men-haircuts-button');
 const coloringButton = document.getElementById('coloring-button');
 
-const womenHaircutDiv = document.getElementById('prices-women-haircut');
-const menHaircutDiv = document.getElementById('prices-men-haircut');
+const womenHaircutsDiv = document.getElementById('prices-women-haircuts');
+const menHaircutsDiv = document.getElementById('prices-men-haircuts');
 const coloringDiv = document.getElementById('prices-coloring');
 
-womenHaircutButton.addEventListener('click', toggleWomenHaircutDiv);
-menHaircutButton.addEventListener('click', toggleMenHaircutDiv);
-coloringButton.addEventListener('click', toggleColoringDiv);
+womenHaircutsButton.addEventListener('click', function() {
+    toggleDiv(womenHaircutsDiv, 'overlay-women-haircuts');
+});
+menHaircutsButton.addEventListener('click', function() {
+    toggleDiv(menHaircutsDiv, 'overlay-men-haircuts');
+});
+coloringButton.addEventListener('click', function() {
+    toggleDiv(coloringDiv, 'overlay-coloring');
+});
 
-document.getElementById('overlay').addEventListener('click', closeAllDivs);
-
-function toggleWomenHaircutDiv() {
-    toggleDiv(womenHaircutDiv);
-}
-
-function toggleMenHaircutDiv() {
-    toggleDiv(menHaircutDiv);
-}
-
-function toggleColoringDiv() {
-    toggleDiv(coloringDiv);
-}
-
-function toggleDiv(div) {
-    div.classList.toggle('none'); 
-    document.getElementById('overlay').classList.toggle('none');
+function toggleDiv(div, overlay) {
+    div.classList.toggle('none');
+    document.getElementById(overlay).classList.toggle('none');
     document.body.style.overflowY = "hidden";
-    div.style.overflowY = "auto";
 }
 
-function closeAllDivs() {
-    womenHaircutDiv.classList.add('none');
-    menHaircutDiv.classList.add('none');
-    coloringDiv.classList.add('none');
-    document.getElementById('overlay').classList.add('none');
+document.getElementById('overlay-women-haircuts').addEventListener('click', function() {
+    closeDiv(womenHaircutsDiv, 'overlay-women-haircuts');
+});
+document.getElementById('overlay-men-haircuts').addEventListener('click', function() {
+    closeDiv(menHaircutsDiv, 'overlay-men-haircuts');
+});
+document.getElementById('overlay-coloring').addEventListener('click', function() {
+    closeDiv(coloringDiv, 'overlay-coloring');
+});
+
+function closeDiv(div, overlay) {
+    div.classList.add('none');
+    document.getElementById(overlay).classList.add('none');
     document.body.style.overflowY = "auto";
 }
 
@@ -108,21 +107,15 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('/img/portfolio/slider/images.json')
         .then(response => response.json())
         .then(data => {
-            const sliderContainer = document.getElementById('slider-container');
-            const slidesPerView = 3;
-            let currentSlide = 0;
-            let totalSlides = data.images.length;
-            const slides = [];
-
-            const duplicatedSlides = data.images.concat(data.images.slice(0, slidesPerView));
-
-            duplicatedSlides.forEach((image) => {
-                const imageDiv = document.createElement('div');
-                imageDiv.classList.add('slide');
-                imageDiv.setAttribute('itemprop', 'itemListElement');
-                imageDiv.setAttribute('itemscope', '');
-                imageDiv.setAttribute('itemtype', 'http://schema.org/HairSalon');
-
+            const splideList = document.querySelector('.splide__list');
+            
+            data.images.forEach(image => {
+                const splideSlide = document.createElement('li');
+                splideSlide.classList.add('splide__slide');
+                splideSlide.setAttribute('itemprop', 'itemListElement');
+                splideSlide.setAttribute('itemscope', '');
+                splideSlide.setAttribute('itemtype', 'http://schema.org/HairSalon');
+                
                 const img = document.createElement('img');
                 img.src = `/img/portfolio/slider/${image.name}`;
                 img.alt = image.alt;
@@ -132,103 +125,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 meta.setAttribute('itemprop', 'description');
                 meta.content = image.description;
 
-                imageDiv.appendChild(img);
-                imageDiv.appendChild(meta);
+                splideSlide.appendChild(img);
+                splideSlide.appendChild(meta);
 
-                sliderContainer.appendChild(imageDiv);
-                slides.push(imageDiv)
+                splideList.appendChild(splideSlide);
             });
-
-            const sliderContainerElement = document.getElementById('slider-container');
-            const slideWidth = 100 / slidesPerView;
-
-            updateSliderPosition();
-
-            function updateSliderPosition() {
-                const position = -slideWidth * currentSlide;
-                sliderContainerElement.style.transition = 'none';
-                sliderContainerElement.style.transform = `translateX(${position}%)`;
-            }
-
-            function moveSlide(direction) {
-                currentSlide += direction;
-                if (currentSlide >= totalSlides + slidesPerView) {
-                    currentSlide = slidesPerView;
-                    updateSliderPosition();
-                } else if (currentSlide < 0) {
-                    currentSlide = totalSlides - 1;
-                    updateSliderPosition();
-                } else {
-                    const position = -slideWidth * currentSlide;
-                    sliderContainerElement.style.transition = 'transform 0.5s ease';
-                    sliderContainerElement.style.transform = `translateX(${position}%)`;
-                }
-            }
-
-            let startX = 0;
-            let isDragging = false;
-
-            sliderContainerElement.addEventListener('mousedown', startDragging);
-            sliderContainerElement.addEventListener('touchstart', startDragging);
-            sliderContainerElement.addEventListener('mousemove', drag);
-            sliderContainerElement.addEventListener('touchmove', drag);
-            sliderContainerElement.addEventListener('mouseup', endDragging);
-            sliderContainerElement.addEventListener('touchend', endDragging);
-            sliderContainerElement.addEventListener('mouseleave', endDragging);
-
-            function startDragging(event) {
-                if (event.type === 'touchstart') {
-                    startX = event.touches[0].clientX;
-                } else {
-                    startX = event.clientX;
-                }
-                isDragging = true;
-            }
-
-            function drag(event) {
-                if (!isDragging) return;
-                event.preventDefault();
-                let x = 0;
-                if (event.type === 'touchmove') {
-                    x = event.touches[0].clientX;
-                } else {
-                    x = event.clientX;
-                }
-                const dragDistance = x - startX;
-                sliderContainerElement.style.transition = 'none';
-                const newPosition = -1 * currentSlide * slideWidth + dragDistance;
-                sliderContainerElement.style.transform = `translateX(${newPosition}px)`;
-            }
-
-            function endDragging(event) {
-                if (!isDragging) return;
-                isDragging = false;
-                let x = 0;
-                if (event.type === 'touchend') {
-                    x = event.changedTouches[0].clientX;
-                } else {
-                    x = event.clientX;
-                }
-                const dragDistance = x - startX;
-                if (dragDistance > 100 && currentSlide > 0) {
-                    moveSlide(-1);
-                } else if (dragDistance < -100 && currentSlide < totalSlides - 1) {
-                    moveSlide(1);
-                } else {
-                    updateSliderPosition();
-                }
-            }
-
-            const prevArrow = document.getElementById('prev');
-            const nextArrow = document.getElementById('next');
-
-            prevArrow.addEventListener('click', function() {
-                moveSlide(-1)
-            });
-
-            nextArrow.addEventListener('click', function() {
-                moveSlide(1)
-            });
+   
+            var splide = new Splide( '.splide', {
+                type   : 'loop',
+                perPage: 3,
+                perMove: 1,
+            } );
+            
+            splide.mount();
         })
         .catch(error => console.error('Ошибка загрузки изображений:', error));
 });
+
+
