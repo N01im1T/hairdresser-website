@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             const splideList = document.querySelector('.splide__list');
             
-            data.images.forEach(image => {
+            data.images.forEach((image, index) => {
                 const splideSlide = document.createElement('li');
                 splideSlide.classList.add('splide__slide');
                 splideSlide.setAttribute('itemprop', 'itemListElement');
@@ -131,12 +131,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 splideList.appendChild(splideSlide);
             });
    
-            var splide = new Splide( '.splide', {
+            var splide = new Splide( '#slider-container', {
                 type   : 'loop',
                 perPage: 3,
-                perMove: 1,
+                focus: 0,
+                focus  : 'center',
+                drag   : 'free',
+                snap   : true,
+                gap    : '70px',
+                lazyLoad: 'nearby',
+                autoWidth: true,
+                arrows : true,
             } );
-            
+
             splide.mount();
         })
         .catch(error => console.error('Ошибка загрузки изображений:', error));
