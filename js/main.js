@@ -239,7 +239,7 @@ const registrationButtonCallToActionSection = document.getElementById('call-to-a
 
 const onlineRegistrationDiv = document.getElementById('registration-wrapper');
 
-registrationButtonCallToActionSection.addEventListener('click', function() {
+registrationButtonAboutSection.addEventListener('click', function() {
     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
 });
 
@@ -255,9 +255,29 @@ registrationButtonPricesColoring.addEventListener('click', function() {
     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
 });
 
-registrationButtonAboutSection.addEventListener('click', function() {
+registrationButtonCallToActionSection.addEventListener('click', function() {
+    saveFormData();
+    loadFormData();
     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
 });
+
+// Save local data for the registration form
+function saveFormData() {
+    const clientName = document.getElementById('name');
+    const clientPhoneNumber = document.getElementById('phone-number');
+    
+    localStorage.setItem('clientName', clientName.value);
+    localStorage.setItem('clientPhoneNumber', clientPhoneNumber.value);
+}
+
+// Load local data when open the registration form
+function loadFormData() {
+    const clientName = document.getElementById('client-name');
+    const clientPhoneNumber = document.getElementById('client-phonenumber');
+
+    clientName.value = localStorage.getItem('clientName') || '';
+    clientPhoneNumber.value = localStorage.getItem('clientPhoneNumber') || '';
+}
 
 document.getElementById('registration-overlay').addEventListener('click', function() {
     closeDiv(onlineRegistrationDiv, 'registration-overlay');
