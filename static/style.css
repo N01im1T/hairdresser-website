@@ -1,9 +1,10 @@
 @import "./reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
-/* @import '../node_modules/@splidejs/splide/dist/css/splide-core.min.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
     --font-family: "Raleway", sans-serif;
+    --secondary: "Roboto";
 }
 
 body {
@@ -337,7 +338,6 @@ header::after {
     margin: 0 auto;
     width: 1400px;
     top: 0px;
-    right: calc((100% - 1400px) / 2);
     border-radius: 20px;
     padding: 108px 140px 61px 140px;
     background: #fbfbfb;
@@ -479,7 +479,6 @@ header::after {
 }
 
 .splide__slide img {
-    /* width: 900px; */
     height: 700px;
     opacity: 0.4;
     transition:width 0.2s, opacity 0.2s;
@@ -492,19 +491,8 @@ header::after {
     animation: slide 0.2s ease forwards;
 }
 
-/* @keyframes splide__slide {
-    from {
-        width: 900px;
-        opacity: 0.4;
-    }
-    to {
-        width: 619px;
-        opacity: 1;
-    }
-} */
-
 .splide__arrow {
-    color: transparent;
+    background: transparent !important;
     border: none;
     outline: none;
     position: absolute;
@@ -532,7 +520,6 @@ header::after {
 }
 
 .splide__pagination splide__pagination--ltr {
-    justify-content: space-between;
     column-gap: 10px;
 }
 
@@ -579,8 +566,9 @@ header::after {
     padding-left: 16px;
     width: 320px;
     height: 80px;
+    font-family: var(--secondary);
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 300;
     border: 2px solid #545353;
     transition: background-color 0.6s ease;
 }
@@ -610,6 +598,188 @@ header::after {
 #call-to-action form button:hover {
     transform: scale(1.05);
     background-color: #fbfbfb6b;
+}
+
+/* Online registation */
+
+#registration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: opacity 0.5s ease-in;
+    overflow-y: auto;
+}
+
+#registration-wrapper {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: 0px;
+    border-radius: 20px;
+    width: 1700px;
+    background: #fbfbfb;
+    z-index: 3;
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+#registration-wrapper.none,
+#registration-overlay.none {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#registration-wrapper:not(.none),
+#registration-overlay:not(.none) {
+    opacity: 1;
+}
+
+#registration-wrapper h2 {
+    padding: 86px 0 99px 277px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#registration-wrapper form {
+    display: grid;
+    padding-left: 102px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#registration-wrapper form label {
+    padding-bottom: 30px;
+}
+
+#registration-wrapper form input,
+#registration-wrapper form select {
+    margin-bottom: 53px;
+    padding-left: 18px;
+    width: 720px;
+    height: 60px;
+    border: 1.50px solid #7c7c7c;;
+    color: #7c7c7c;
+}
+
+label[for="client-name"] {
+    grid-row: 1;
+    pointer-events: none;
+}
+
+input[id="client-name"] {
+    grid-row: 2;
+}
+
+label[for="client-phonenumber"] {
+    grid-row: 3;
+    pointer-events: none;
+}
+
+input[id="client-phonenumber"] {
+    grid-row: 4;
+    font-family: var(--secondary);
+    font-weight: 300;
+    font-size: 24px;
+}
+
+label[for="service-type"] {
+    grid-row: 5;
+    pointer-events: none;
+}
+
+select[id="service-type"] {
+    grid-row: 6;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('../img/registration/arrow.png') no-repeat;
+    background-position: 680px;
+}
+
+#registration-wrapper label[for="date-and-time"] {
+    grid-row: 7;
+    pointer-events: none;
+}
+
+#registration-wrapper input[id="date"],
+#registration-wrapper input[id="time"] {
+    grid-row: 8;
+    width: 340px;
+    background: url('../img/registration/arrow.png') no-repeat right;
+    background-position: 300px;
+}
+
+#registration-wrapper input[id="time"] {
+    position: relative;
+    margin-left: -778px;
+}
+
+#registration-wrapper input[id="private-policy"],
+#registration-wrapper label[for="private-policy"] {
+    grid-row: 9;
+}
+
+#registration-wrapper input[id="private-policy"] {
+    width: 38px;
+    height: 38px;
+    background-image: url('../img/registration/unchecked-checkbox-38px.png');
+    background-size: cover;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+#registration-wrapper input[id="private-policy"]:checked {
+    background-image: url('../img/registration/checked-checkbox-38px.png'); /* Если хотите показать другую иконку при выборе */
+}
+
+#registration-wrapper label[for="private-policy"] {
+    margin-left: -1120px;
+    width: 616px;
+    height: 38px;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+#registration-wrapper form button {
+    position: relative;
+    grid-row: 10;
+    margin-bottom: 118px;
+}
+
+#registration-wrapper form button:hover {
+    transform: scale(1.05);
+}
+
+#registration-wrapper::after {
+    position: absolute;
+    content: "";
+    right: 0px;
+    top: 0;
+    border-radius: 0 20px 20px 0;
+    width: 738px;
+    height: 1241px;
+
+    background-image: url("../img/registration/reg-window-img.jpg");
+    background-size: auto, auto;
+    z-index: 2;
+}
+
+#registration-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 469px;
+    bottom: 171px;
+    width: 61px;
+    height: 2px;
+    background-color: #000;
 }
 
 @media screen and (max-width: 1920px) {

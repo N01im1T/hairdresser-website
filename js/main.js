@@ -19,39 +19,45 @@ applyStylesForScale(currentScale);
 
 // Nav section
 
-$(document).ready(function(){
-    $('#to-about-me-nav').click(function(){
-        $('html, body').animate({
-            scrollTop: $('#about-me').offset().top
-        }, 1000);
+document.addEventListener('DOMContentLoaded', function() {
+    function scrollToElement(elementId) {
+        var element = document.getElementById(elementId);
+        if (element) {
+            window.scrollTo({
+                top: element.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    document.getElementById('to-about-me-nav').addEventListener('click', function() {
+        scrollToElement('about-me');
     });
 
-    $('#to-services-nav').click(function(){
-        $('html, body').animate({
-            scrollTop: $('#services').offset().top
-        }, 1000);
+    document.getElementById('to-services-nav').addEventListener('click', function() {
+        scrollToElement('services');
     });
 
-    $('#to-portfolio-nav').click(function(){
-        $('html, body').animate({
-            scrollTop: $('#portfolio').offset().top
-        }, 1000);
+    document.getElementById('to-portfolio-nav').addEventListener('click', function() {
+        scrollToElement('portfolio');
     });
 
-    $('#to-contacts-nav').click(function(){
-        $('html, body').animate({
-            scrollTop: $('#contacts').offset().top
-        }, 1000);
+    document.getElementById('to-contacts-nav').addEventListener('click', function() {
+        scrollToElement('contacts');
     });
 });
 
 // About section
 
-$(document).ready(function(){
-    $('#to-portfolio').click(function(){
-        $('html, body').animate({
-            scrollTop: $('#portfolio').offset().top
-        }, 1000);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('to-portfolio').addEventListener('click', function() {
+        var portfolioElement = document.getElementById('portfolio');
+        if (portfolioElement) {
+            window.scrollTo({
+                top: portfolioElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -109,6 +115,24 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             const splideList = document.querySelector('.splide__list');
             
+            var splide = new Splide( '#slider-container', {
+                type   : 'loop',
+                perPage: 3,
+                focus  : 'center',
+                drag   : 'free',
+                snap   : true,
+                gap    : '70px',
+                lazyLoad: 'nearby',
+                autoWidth: true,
+                arrows : true,
+            } );
+
+            splide.on('mounted', function () {
+                splide.go(splide.length / 2);
+            });
+
+            splide.mount();
+
             data.images.forEach((image, index) => {
                 const splideSlide = document.createElement('li');
                 splideSlide.classList.add('splide__slide');
@@ -129,24 +153,112 @@ document.addEventListener('DOMContentLoaded', function () {
                 splideSlide.appendChild(meta);
 
                 splideList.appendChild(splideSlide);
-            });
-   
-            var splide = new Splide( '#slider-container', {
-                type   : 'loop',
-                perPage: 3,
-                focus: 0,
-                focus  : 'center',
-                drag   : 'free',
-                snap   : true,
-                gap    : '70px',
-                lazyLoad: 'nearby',
-                autoWidth: true,
-                arrows : true,
-            } );
 
-            splide.mount();
+                splide.add(splideSlide);
+            });
         })
         .catch(error => console.error('Ошибка загрузки изображений:', error));
 });
 
 
+// Online registration
+
+// var datePicker = document.getElementById('date');
+
+// datePicker.min = new Date().toISOString().split("T")[0];
+
+// function blockInvalidDates() {
+//     var maxDate = new Date();
+//     maxDate.setMonth(maxDate.getMonth() + 1);
+//     datePicker.max = maxDate.toISOString().split("T")[0];
+
+//     var selectedDate = new Date(datePicker.value);
+
+//     if (selectedDate > maxDate || selectedDate < new Date()) {
+//         datePicker.value = ""; 
+//     }
+// }
+
+// datePicker.oninput = blockInvalidDates;
+
+
+// blockInvalidDates();
+
+// const timePicker = document.getElementById('time');
+
+
+// timePicker.addEventListener('input', function() {
+//     const selectedTime = this.value;
+//     const currentTime = new Date();
+//     const selectedDateTime = new Date(currentTime.toDateString() + ' ' + selectedTime);
+
+
+//     const minTime = new Date(currentTime.toDateString() + ' 10:00');
+//     const maxTime = new Date(currentTime.toDateString() + ' 20:00');
+
+
+//     if (selectedDateTime < minTime || selectedDateTime > maxTime) {
+//         alert("Пожалуйста, выберите время между 10:00 и 20:00.");
+//         this.value = ''; // Очищаем значение, если выбранное время недопустимо
+//     }
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    const currentMinutes = currentDate.getMinutes();
+
+    const minDate = currentDate;
+    const maxDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate());
+
+    const minTime = (currentHour < 10 || (currentHour === 10 && currentMinutes === 0)) ? "10:00" : "20:00";
+    const maxTime = (currentHour >= 20) ? "20:00" : "23:59";
+
+    flatpickr("#date", {
+        dateFormat: "d-m-Y",
+        minDate: minDate,
+        maxDate: maxDate,
+    });
+
+    flatpickr("#time", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true,
+        minTime: minTime,
+        maxTime: maxTime,
+        minuteIncrement: 5
+    });
+});
+
+const registrationButtonAboutSection = document.getElementById('about-call-to-action-button');
+const registrationButtonPricesWomenHairCuts = document.getElementById('prices-women-haircuts-button');
+const registrationButtonPricesMenHairCuts = document.getElementById('prices-men-haircuts-button');
+const registrationButtonPricesColoring = document.getElementById('prices-coloring-button');
+const registrationButtonCallToActionSection = document.getElementById('call-to-action-button');
+
+const onlineRegistrationDiv = document.getElementById('registration-wrapper');
+
+registrationButtonCallToActionSection.addEventListener('click', function() {
+    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+});
+
+registrationButtonPricesWomenHairCuts.addEventListener('click', function() {
+    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+});
+
+registrationButtonPricesMenHairCuts.addEventListener('click', function() {
+    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+});
+
+registrationButtonPricesColoring.addEventListener('click', function() {
+    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+});
+
+registrationButtonAboutSection.addEventListener('click', function() {
+    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+});
+
+document.getElementById('registration-overlay').addEventListener('click', function() {
+    closeDiv(onlineRegistrationDiv, 'registration-overlay');
+});
