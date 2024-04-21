@@ -1,22 +1,3 @@
-//Site scaling
-
-//Get current browser scale
-function getCurrentScale() {
-    return window.devicePixelRatio;
-}
-  
-// Checking page load scale
-window.onload = function() {
-    var currentScale = getCurrentScale();
-    applyStylesForScale(currentScale);
-};
-  
-// Scale check when resizing a window
-window.onresize = function() {
-var currentScale = getCurrentScale();
-applyStylesForScale(currentScale);
-};
-
 // Nav section
 
 document.addEventListener('DOMContentLoaded', function() {

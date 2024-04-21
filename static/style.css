@@ -8,6 +8,7 @@
 }
 
 body {
+    max-width: 1920px;
     font-family: var(--font-family);
     background: #fbfbfb;
     overflow-x: hidden;
