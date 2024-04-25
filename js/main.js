@@ -144,46 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Online registration
 
-// var datePicker = document.getElementById('date');
-
-// datePicker.min = new Date().toISOString().split("T")[0];
-
-// function blockInvalidDates() {
-//     var maxDate = new Date();
-//     maxDate.setMonth(maxDate.getMonth() + 1);
-//     datePicker.max = maxDate.toISOString().split("T")[0];
-
-//     var selectedDate = new Date(datePicker.value);
-
-//     if (selectedDate > maxDate || selectedDate < new Date()) {
-//         datePicker.value = ""; 
-//     }
-// }
-
-// datePicker.oninput = blockInvalidDates;
-
-
-// blockInvalidDates();
-
-// const timePicker = document.getElementById('time');
-
-
-// timePicker.addEventListener('input', function() {
-//     const selectedTime = this.value;
-//     const currentTime = new Date();
-//     const selectedDateTime = new Date(currentTime.toDateString() + ' ' + selectedTime);
-
-
-//     const minTime = new Date(currentTime.toDateString() + ' 10:00');
-//     const maxTime = new Date(currentTime.toDateString() + ' 20:00');
-
-
-//     if (selectedDateTime < minTime || selectedDateTime > maxTime) {
-//         alert("Пожалуйста, выберите время между 10:00 и 20:00.");
-//         this.value = ''; // Очищаем значение, если выбранное время недопустимо
-//     }
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
     const currentDate = new Date();
     const currentHour = currentDate.getHours();
@@ -262,4 +222,90 @@ function loadFormData() {
 
 document.getElementById('registration-overlay').addEventListener('click', function() {
     closeDiv(onlineRegistrationDiv, 'registration-overlay');
+});
+
+// Contacts
+
+// Footer
+
+document.addEventListener('DOMContentLoaded', function() {
+    function scrollToElement(elementId) {
+        var element = document.getElementById(elementId);
+        if (element) {
+            window.scrollTo({
+                top: element.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    document.getElementById('to-about-me-bottomnav').addEventListener('click', function() {
+        scrollToElement('about-me');
+    });
+
+    document.getElementById('to-services-bottomnav').addEventListener('click', function() {
+        scrollToElement('services');
+    });
+
+    document.getElementById('to-portfolio-bottomnav').addEventListener('click', function() {
+        scrollToElement('portfolio');
+    });
+
+    document.getElementById('to-contacts-bottomnav').addEventListener('click', function() {
+        scrollToElement('contacts');
+    });
+});
+
+// Scroll To Top
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // var $gotop = $('#scroll-to-top');
+    // $(window).scroll(function() {
+    //     if ($(this).scrollTop() > 300) {
+    //         $gotop.fadeIn(200);
+    //     } else {
+    //         $gotop.fadeOut(200);
+    //     }
+    // });
+    // $gotop.onclick(function() {
+    //     $('html, body').animate({
+    //         scrollTop: 0
+    //     }, 'slow');
+    // });
+    
+    
+    // var div = document.getElementById('scroll-to-top');
+
+    // function toggleGotop() {
+    //     if (window.scrollY > 300) {
+    //         div.style.display = 'block';
+    //     } else {
+    //         div.style.display = 'none';
+    //     }
+    // }
+
+    // window.addEventListener('scroll', function() {
+    //     toggleGotop();
+    // });
+
+    // div.addEventListener('click', function() {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     });
+    // });
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById('scroll-to-top').classList.remove('none');
+        } else {
+            document.getElementById('scroll-to-top').classList.add('none');
+        }
+    }
+
+    document.getElementById('scroll-to-top').onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
 });

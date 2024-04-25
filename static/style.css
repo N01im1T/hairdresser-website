@@ -14,6 +14,26 @@ body {
     overflow-x: hidden;
 }
 
+body::before {
+    content: url('../img/right-background-el.svg');
+    position: absolute;
+    top: 1123px;
+    right: 0px;
+    width: 594.5px;
+    height: 1675px;
+    z-index: -1;
+}
+
+body::after {
+    content: url('../img/left-background-el.svg');
+    position: absolute;
+    top: 2256px;
+    left: 0px;
+    width: 594.5px;
+    height: 1875px;
+    z-index: -1;
+}
+
 button {
     border: 2px solid #000;
     width: 345px;
@@ -45,24 +65,34 @@ a:visited {
     display: none !important;
 }
 
-body::before {
-    content: url('../img/right-background-el.svg');
-    position: absolute;
-    top: 1123px;
-    right: 0px;
-    width: 594.5px;
-    height: 1675px;
-    z-index: -1;
+#scroll-to-top {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    background-color: #5045424d;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.6s ease;
+}
+  
+#scroll-icon {
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(-45deg);
+    margin: 14px auto;
 }
 
-body::after {
-    content: url('../img/left-background-el.svg');
-    position: absolute;
-    top: 2256px;
-    left: 0px;
-    width: 594.5px;
-    height: 1875px;
-    z-index: -1;
+#scroll-to-top:hover {
+    transform: scale(1.1);
 }
 
 /* Header */
@@ -70,18 +100,29 @@ body::after {
 /* Navigation */
 
 .navy-item {
+    display: flex;
     margin: 20px 0 0 40px;
     max-width: 100%;
+    align-items: center;
 }
 
 .navbar {
     font-size: 24px;
-    font-weight: 600;
-
-    display: flex;
-    column-gap: 52px;
-    align-items: center;
+    font-weight: 500;
     cursor: pointer;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 52px;
+}
+
+.navbar li:first-child {
+    margin-left: 0;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
 }
 
 header::after {
@@ -781,6 +822,162 @@ select[id="service-type"] {
     width: 61px;
     height: 2px;
     background-color: #000;
+}
+
+/* Contacts */
+
+#contacts {
+    display: grid;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 107px;
+    margin-bottom: 278px;
+}
+
+#contacts h2 {
+    grid-column: 3;
+    margin-right: 150px;
+    margin-bottom: 92px;
+    font-size: 96px;
+    font-weight: 500;
+    text-align: right;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#contacts h3 {
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+#address,
+#working-hours {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 106px;
+}
+
+#address,
+#telephone {
+    margin-top: 65px;
+}
+
+#telephone,
+#social-networks {
+    grid-column: 2;
+    grid-row: 2;
+    margin-right: 89px;
+}
+
+#working-hours,
+#social-networks {
+    margin-top: 379px;
+}
+
+#address a,
+#telephone a,
+#working-hours p {
+    font-size: 36px;
+    font-weight: 400;
+}
+
+#social-networks a img {
+    margin-right: 27px;
+    width: 35px;
+    height: 35px;
+}
+
+#map {
+    position: relative;
+    grid-column: 3;
+    grid-row: 2;
+    margin-right: 94px;
+    width: 886px;
+    height: 569px;
+}
+
+#contacts::after {
+    content: "";
+    position: absolute;
+    margin-top: 1018px;
+    margin-left: 81px;
+    max-width: 1700px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    pointer-events: none;
+}
+
+/* Footer */
+
+#footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#footer aside {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+#bottom-logo {
+    position: relative;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+    width: 110px;
+    height: 110px;
+}
+
+#footer p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#footer .navbar {
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: 235px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 59px;
+}
+
+.navbar li:first-child {
+    margin-left: 0;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.reserved-rights {
+    margin-left: auto;
+    margin-right: 93px;
+}
+
+#bottom-logo::after {
+    content: "";
+    position: absolute;
+    margin-bottom: 44px;
+    margin-left: 0px;
+    max-height: 97px;
+    width: 2px;
+    height: 100%;
+    background-color: #000;
+    pointer-events: none;
+
 }
 
 @media screen and (max-width: 1920px) {
