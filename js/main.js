@@ -144,33 +144,151 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Online registration
 
-document.addEventListener('DOMContentLoaded', function () {
-    const currentDate = new Date();
-    const currentHour = currentDate.getHours();
-    const currentMinutes = currentDate.getMinutes();
+// Date and time pickers
+// document.addEventListener('DOMContentLoaded', function () {\
+//     const currentDate = new Date();
+//     const currentHour = currentDate.getHours();
+//     const currentMinutes = currentDate.getMinutes();
 
-    const minDate = currentDate;
-    const maxDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate());
+//     const minDate = currentDate;
+//     const maxDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate());
 
-    const minTime = (currentHour < 10 || (currentHour === 10 && currentMinutes === 0)) ? "10:00" : "20:00";
-    const maxTime = (currentHour >= 20) ? "20:00" : "23:59";
+//     const minTime = (currentHour < 10 || (currentHour === 10 && currentMinutes === 0)) ? "10:00" : "20:00";
+//     const maxTime = (currentHour >= 20) ? "20:00" : "23:59";
 
-    flatpickr("#date", {
-        dateFormat: "d-m-Y",
-        minDate: minDate,
-        maxDate: maxDate,
+//     flatpickr("#date", {
+//         dateFormat: "d-m-Y",
+//         minDate: minDate,
+//         maxDate: maxDate,
+//         locale: "ru"
+//     });
+
+//     flatpickr("#time", {
+//         enableTime: true,
+//         noCalendar: true,
+//         dateFormat: "H:i",
+//         time_24hr: true,
+//         minTime: minTime,
+//         maxTime: maxTime,
+//         minuteIncrement: 5,
+//         locale: "ru"
+//     });
+// });
+document.addEventListener('DOMContentLoaded', async function () {
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+
+    let selectedService = null;
+
+    document.getElementById('service-type').addEventListener('change', function () {
+        selectedService = this.value;
+        updateDateTimePicker();
     });
 
-    flatpickr("#time", {
-        enableTime: true,
-        noCalendar: true,
-        dateFormat: "H:i",
-        time_24hr: true,
-        minTime: minTime,
-        maxTime: maxTime,
-        minuteIncrement: 5
+    dateInput.addEventListener('change', function () {
+        updateDateTimePicker();
+    });
+
+    async function updateDateTimePicker() {
+        if (!selectedService || !dateInput.value) return;
+
+        // Request to server for time avaibility
+        const availability = await checkAvailability(selectedService, dateInput.value);
+
+        // Get time borders for chosen service
+        const timeLimits = getServiceTimeLimits(selectedService, availability);
+
+        // Set time borders for time input
+        flatpickr(timeInput, {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true,
+            minTime: timeLimits.minTime,
+            maxTime: timeLimits.maxTime,
+            minuteIncrement: 5,
+            defaultDate: "today",
+            onChange: function(selectedDates, dateStr, instance) {
+                // Set min time if chose current date
+                if (flatpickr.formatDate(selectedDates[0], "d-m-Y") === flatpickr.formatDate(new Date(), "d-m-Y")) {
+                    const roundedTime = roundToNearest5Minutes(new Date());
+                    instance.set("minTime", roundedTime);
+                } else {
+                    instance.set("minTime", timeLimits.minTime);
+                }
+            }
+        });
+    }
+
+    // Request from server
+    async function checkAvailability(service, date) {
+        // const response = await fetch(`/check-availability?service=${service}&date=${date}`);
+        // return await response.json();
+        // return { availableTimeSlots: ["10:00", "11:00", "12:00"], unavailableTimeSlots: ["15:15", "16:15"] };
+    }
+
+    // Функция для получения ограничений времени в зависимости от выбранной услуги и доступности времени
+    function getServiceTimeLimits(service, availability) {
+        let minTime = "10:00";
+        let maxTime = "20:00";
+
+        if (availability) {
+            const availableTimeSlots = availability.availableTimeSlots;
+            const unavailableTimeSlots = availability.unavailableTimeSlots;
+
+            if (availableTimeSlots && availableTimeSlots.length > 0) {
+                minTime = availableTimeSlots[0];
+                maxTime = availableTimeSlots[availableTimeSlots.length - 1];
+            }
+
+            if (unavailableTimeSlots && unavailableTimeSlots.length > 0) {
+                // Blocke unavailable time slots
+                unavailableTimeSlots.forEach(slot => {
+                    if (slot === minTime) minTime = incrementTime(slot);
+                    if (slot === maxTime) maxTime = decrementTime(slot);
+                });
+            }
+        }
+
+        return { minTime, maxTime };
+    }
+
+    function roundToNearest5Minutes(date) {
+        const coeff = 1000 * 60 * 5;
+        return new Date(Math.ceil(date.getTime() / coeff) * coeff);
+    }
+
+    function incrementTime(time) {
+        const [hours, minutes] = time.split(":").map(Number);
+        let newHours = hours;
+        let newMinutes = minutes + 5;
+        if (newMinutes >= 60) {
+            newHours++;
+            newMinutes -= 60;
+        }
+        return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
+    }
+
+    function decrementTime(time) {
+        const [hours, minutes] = time.split(":").map(Number);
+        let newHours = hours;
+        let newMinutes = minutes - 5;
+        if (newMinutes < 0) {
+            newHours--;
+            newMinutes += 60;
+        }
+        return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
+    }
+
+    flatpickr(dateInput, {
+        dateFormat: "d-m-Y",
+        minDate: "today",
+        maxDate: new Date().fp_incr(30),
+        locale: "ru"
     });
 });
+
+// Button processing
 
 const registrationButtonAboutSection = document.getElementById('about-call-to-action-button');
 const registrationButtonPricesWomenHairCuts = document.getElementById('prices-women-haircuts-button');
@@ -221,7 +339,9 @@ function loadFormData() {
 }
 
 document.getElementById('registration-overlay').addEventListener('click', function() {
-    closeDiv(onlineRegistrationDiv, 'registration-overlay');
+    if (event.target.id === 'registration-overlay') {
+        closeDiv(onlineRegistrationDiv, 'registration-overlay');
+    }
 });
 
 // Contacts
@@ -259,53 +379,24 @@ document.addEventListener('DOMContentLoaded', function() {
 // Scroll To Top
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    // var $gotop = $('#scroll-to-top');
-    // $(window).scroll(function() {
-    //     if ($(this).scrollTop() > 300) {
-    //         $gotop.fadeIn(200);
-    //     } else {
-    //         $gotop.fadeOut(200);
-    //     }
-    // });
-    // $gotop.onclick(function() {
-    //     $('html, body').animate({
-    //         scrollTop: 0
-    //     }, 'slow');
-    // });
-    
-    
-    // var div = document.getElementById('scroll-to-top');
+    var scrollToTop = document.getElementById('scroll-to-top');
 
-    // function toggleGotop() {
-    //     if (window.scrollY > 300) {
-    //         div.style.display = 'block';
-    //     } else {
-    //         div.style.display = 'none';
-    //     }
-    // }
-
-    // window.addEventListener('scroll', function() {
-    //     toggleGotop();
-    // });
-
-    // div.addEventListener('click', function() {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: 'smooth'
-    //     });
-    // });
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            document.getElementById('scroll-to-top').classList.remove('none');
+    function toggleGotop() {
+        if (window.scrollY > 100) {
+            scrollToTop.style.opacity = '1';
         } else {
-            document.getElementById('scroll-to-top').classList.add('none');
+            scrollToTop.style.opacity = '0';
         }
-    }
+    }    
 
-    document.getElementById('scroll-to-top').onclick = function() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    };
+    window.addEventListener('scroll', function() {
+        toggleGotop();
+    });
+
+    scrollToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });

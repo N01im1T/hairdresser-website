@@ -1,19 +1,59 @@
 {
     "images": [
         {
-            "name": "fst-portfolio-img.png",
+            "name": "01.png",
             "alt": "Portfolio image_1",
-            "description": "Мелирование"
+            "description": "Рельефное окрашивание-комбинация осветляющих процедур"
         },
         {
-            "name": "snd-portfolio-img.png",
+            "name": "02.png",
             "alt": "Portfolio image_2",
+            "description": "Тотальный блонд"
+        },
+        {
+            "name": "03.png",
+            "alt": "Portfolio image_3",
+            "description": "Шатуш"
+        },
+        {
+            "name": "04.jpg",
+            "alt": "Portfolio image_4",
+            "description": "Стрижка \"Боб-каре\""
+        },
+        {
+            "name": "05.jpg",
+            "alt": "Portfolio image_5",
+            "description": "Cтрижка \"Каре\" с мелированием и ровным срезом для тонких волос."
+        },
+        {
+            "name": "06.jpg",
+            "alt": "Portfolio image_6",
+            "description": "Стрижка \"Боб-каре\""
+        },
+        {
+            "name": "07.jpg",
+            "alt": "Portfolio image_7",
+            "description": "Тотальный блонд"
+        },
+        {
+            "name": "08.jpg",
+            "alt": "Portfolio image_8",
+            "description": "Рельефный блонд"
+        },
+        {
+            "name": "09.jpg",
+            "alt": "Portfolio image_9",
             "description": "Окрашивание локанов"
         },
         {
-            "name": "thd-portfolio-img.png",
-            "alt": "Portfolio image_3",
-            "description": "Окрашивание локанов"
+            "name": "10.jpg",
+            "alt": "Portfolio image_10",
+            "description": "Airtouch"
+        },
+        {
+            "name": "11.jpg",
+            "alt": "Portfolio image_11",
+            "description": "Тотальный блонд"
         }
     ]
 }
