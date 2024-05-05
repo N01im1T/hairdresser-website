@@ -8,10 +8,15 @@
 }
 
 body {
-    max-width: 1920px;
-    font-family: var(--font-family);
-    background: #fbfbfb;
+    display: block;
     overflow-x: hidden;
+
+    font-family: var(--font-family);
+
+    background: #fbfbfb;
+
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 body::before {
@@ -19,8 +24,10 @@ body::before {
     position: absolute;
     top: 1123px;
     right: 0px;
+
     width: 594.5px;
     height: 1675px;
+
     z-index: -1;
 }
 
@@ -29,22 +36,24 @@ body::after {
     position: absolute;
     top: 2256px;
     left: 0px;
+
     width: 594.5px;
     height: 1875px;
+
     z-index: -1;
 }
 
 button {
-    border: 2px solid #000;
-    width: 345px;
-    height: 100px;
-
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 0.1em;
 
     background: rgba(217, 217, 217, 0);
     background: #fff;
+
+    width: 345px;
+    height: 100px;
+    border: 2px solid #000;
 
     transition: transform 0.6s ease;
 }
@@ -66,30 +75,36 @@ a:visited {
 }
 
 #scroll-to-top {
-    display: block;
     position: fixed;
-    bottom: 20px;
+    display: block;
     right: 20px;
-    z-index: 5;
+    bottom: 20px;
+
+    text-align: center;
+    color: white;
+    line-height: 40px;
+
+    background-color: #5045424d;
+    
     width: 40px;
     height: 40px;
-    background-color: #5045424d;
     border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    color: white;
+    
     cursor: pointer;
     opacity: 0;
+    z-index: 5;
+
     transition:all 0.6s ease;
 }
   
 #scroll-icon {
     width: 20px;
     height: 20px;
+    margin: 14px auto;
     border-top: 2px solid white;
     border-right: 2px solid white;
+
     transform: rotate(-45deg);
-    margin: 14px auto;
 }
 
 #scroll-to-top:hover {
@@ -102,19 +117,22 @@ a:visited {
 
 .navy-item {
     display: flex;
-    margin: 20px 0 0 40px;
+
     max-width: 100%;
+    margin: 20px 0 0 40px;
     align-items: center;
 }
 
 .navbar {
     font-size: 24px;
     font-weight: 500;
+
     cursor: pointer;
 }
 
 .navbar li {
     display: inline-block;
+
     margin-right: 52px;
 }
 
@@ -128,36 +146,34 @@ a:visited {
 
 header::after {
     content: "";
-    right: 58px;
-    top: 0;
-    display: block;
     position: absolute;
-    width: 1023px;
-    height: 1080px;
-
+    display: block;
+    top: 0;
+    right: 58px;
+    
     background-image: url("../img/header/header-img.png");
     background-size: auto, auto;
+
+    width: 1023px;
+    height: 1080px;
 
     z-index: -1;
 }
 
 /* Main */
 
-#main-container {
-    display: block;
-}
-
 /* About */
 
 #about {
     display: block;
+    
     max-width: 100%;
 }
 
 #about-wrapper {
-    margin: 150px 0 0 123px;
     width: 823px;
     height: 338px;
+    margin: 150px 0 0 123px;
 }
 
 #about-profession {
@@ -168,14 +184,18 @@ header::after {
 #about-name {
     font-size: 128px;
     font-weight: 500;
+    
     text-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
 }
 
+/* About call to action */
+
 #about-call-to-action {
     position: relative;
-    margin: 18px 0 0 123px;
+
     width: 686px;
     height: 364px;
+    margin: 18px 0 0 123px;
 }
 
 #about-call-to-action p {
@@ -189,6 +209,7 @@ header::after {
 
 #about-call-to-action a{
     display: block;
+
     font-size: 24px;
     font-weight: 500;
 }
@@ -197,19 +218,24 @@ header::after {
     content: "";
     position: absolute;
     left: -56px;
+    
+    background-color: #000;
+
     width: 2px;
     height: 357px;
-    background-color: #000;
 }
 
 #about-call-to-action::after {
     content: "";
     position: absolute;
-    left: 364px;
     top: 217px;
+    left: 364px;
+    
+    background-color: #000;
+    
     width: 61px;
     height: 2px;
-    background-color: #000;
+    
     pointer-events: none;
 }
 
@@ -217,75 +243,94 @@ header::after {
     transform: scale(1.05);
 }
 
+/* About me */
+
 #about-me {
     display: grid;
 }
 
 #about-me-img {
     grid-column: 1;
-    margin-top: 98px;
+
     width: 703px;
     height: 1030px;
+    margin-top: 98px;
 }
 
 #about-me-block {
     position: relative;
     grid-column: 2;
-    margin: 98px 271px 0 0;
+
     width: 1147px;
     height: 1030px;
+    margin: 98px 271px 0 0;
 }
 
 #about-me-block h2 {
     position: absolute;
-    margin: 20px 0 0 552px;
     display: flex;
+
     font-size: 96px;
     font-weight: 500;
+    
+    margin: 20px 0 0 552px;
+    
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #about-me-block p {
     position: absolute;
-    margin: 151px 0 0 53px;
+    justify-content: right;
+    
+    font-size: 36px;
+    font-weight: 400;
+    text-align: justify;
+    text-align-last: right;
+    
     width: 893px;
     height: 644px;
-    font-size: 36px;
-    font-weight: 500;
-    text-align: right;
-    justify-content: right;
+    margin: 151px 0 0 53px;
+    
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-#about-me-block p:nth-of-type(1) br {
+#about-me-block p:nth-of-type(1) br:last-child {
     content: "";
     display: block;
-    height: 64px;
+    
+    height: 60px;
 }
 
 #about-me-block button {
     position: absolute;
-    margin: 795px 0 0 600px;
     float: right;
+    
+    margin: 795px 0 0 600px;
 }
 
 #about-me-block::after {
     content: "";
     position: absolute;
-    margin: 54px 0px 0px 1016px;
+    
+    background-color: #000;
+    
     width: 2px;
     height: 840px;
-    background-color: #000;
+    margin: 54px 0px 0px 1016px;
+    
     pointer-events: none;
 }
 
 #about-me-block::before {
     content: "";
     position: absolute;
-    margin: 845px 0px 0px 524px;
+    
+    background-color: #000;
+    
     width: 61px;
     height: 2px;
-    background-color: #000;
+    margin: 845px 0px 0px 524px;
+    
     pointer-events: none;
 }
 
@@ -297,28 +342,35 @@ header::after {
 
 #services h2 {
     position: relative;
-    margin: 137px 0 100px 111px;
+    
     font-size: 96px;
     font-weight: 500;
+    
+    margin: 137px 0 100px 111px;
+    
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #services h2::after {
     content: "";
     position: absolute;
-    margin: 60px 0px 0px 36px;
+    
+    background-color: #000;
+    
     width: 1215px;
     height: 2px;
-    background-color: #000;
+    margin: 60px 0px 0px 36px;
+    
     pointer-events: none;
 }
 
 #services-wrapper {
-    margin-bottom: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
     justify-items: center;
+    align-items: center;
+    
+    margin-bottom: 100px;
 }
 
 #women-haircuts,
@@ -327,6 +379,7 @@ header::after {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     transition: transform 0.6s ease;
 }
 
@@ -363,27 +416,35 @@ header::after {
     position: fixed;
     top: 0;
     left: 0;
+    overflow-y: auto;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    
     z-index: 2;
+    
     transition: opacity 0.5s ease-in;
-    overflow-y: auto;
 }
 
 #prices-women-haircuts,
 #prices-men-haircuts,
 #prices-coloring {
     display: grid;
-    margin: 0 auto;
-    width: 1400px;
     top: 0px;
-    border-radius: 20px;
-    padding: 108px 140px 61px 140px;
+    
     background: #fbfbfb;
-    z-index: 3;
-    transition: opacity 0.5s ease-in;
+    
+    width: 1400px;
+    padding: 108px 140px 61px 140px;
+    margin: 0 auto;
+    border-radius: 20px;
+    
     opacity: 0;
+    z-index: 3;
+    
+    transition: opacity 0.5s ease-in;
     transform: scale(0.8);
 }
 
@@ -394,6 +455,7 @@ header::after {
 #overlay-men-haircuts.none,
 #overlay-coloring.none {
     opacity: 0;
+
     pointer-events: none;
 }
 
@@ -409,15 +471,17 @@ header::after {
 #prices-women-haircuts h3,
 #prices-men-haircuts h3,
 #prices-coloring h3 {
-    margin-bottom: 86px;
     font-size: 64px;
     font-weight: 600;
+
+    margin-bottom: 86px;
 }
 
 .service {
-    margin-bottom: 115px;
     font-size: 36px;
     font-weight: 600;
+
+    margin-bottom: 115px;
 }
 
 .flex {
@@ -428,6 +492,7 @@ header::after {
 .service-option {
     display: flex;
     justify-content: space-between;
+
     font-size: 36px;
     font-weight: 500;
 }
@@ -441,9 +506,10 @@ header::after {
 }
 
 .price {
-    margin-right: 10px;
     font-size: 36px;
     font-weight: 600;
+
+    margin-right: 10px;
 }
 
 .currency {
@@ -462,20 +528,26 @@ header::after {
 .line-horisontal::after {
     content: "";
     position: absolute;
-    margin: 57.5px 0px 57.5px 0px;
+    
+    background-color: #000;
+
     width: 1116px;
     height: 2px;
-    background-color: #000;
+    margin: 57.5px 0px 57.5px 0px;
+
     pointer-events: none;
 }
 
 .line-horisontal-single-block::after {
     content: "";
     position: absolute;
-    margin: 100px 0px 57.5px 0px;
+    
+    background-color: #000;
+
     width: 1116px;
     height: 2px;
-    background-color: #000;
+    margin: 100px 0px 57.5px 0px;
+
     pointer-events: none;
 }
 
@@ -489,11 +561,12 @@ header::after {
 
 #portfolio h2 {
     display: flex;
-    margin: 77px 142px 91px;
     justify-content: right;
-
+    
     font-size: 96px;
     font-weight: 500;
+
+    margin: 77px 142px 91px;
 
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -505,13 +578,15 @@ header::after {
 }
 
 .slider {
-    width: 100%;
-    overflow: hidden;
-    max-height: 700px;
-    margin-bottom: 193px;
-    touch-action: pan-y;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+
+    width: 100%;
+    max-height: 700px;
+    margin-bottom: 193px;
+
+    touch-action: pan-y;
 }
 
 .splide__list {
@@ -521,29 +596,37 @@ header::after {
 .splide__slide img {
     width: 619px;
     height: 700px;
+
     opacity: 0.4;
+
     transition: 0.6s ease-in;
 }
 
 .splide__slide.is-active img {
     width: 619px;
     height: 700px;
+    
     opacity: 1;
+    
     animation: 0.6s ease;
 }
 
 .splide__arrow {
-    background: transparent !important;
-    border: none;
-    outline: none;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    outline: none;
+    
+    background: transparent !important;
+    
     width: 70px;
     height: 70px;
-    z-index: 3;
+    border: none;
+    
     cursor: pointer;
+    z-index: 3;
+    
     transition: 0.2s ease;
+    transform: translateY(-50%);
 }
 
 .splide__arrow:hover {
@@ -551,13 +634,13 @@ header::after {
 }
 
 .splide__arrow--prev {
-    left: 30px;
     content: url('../img/portfolio/slider/icon-left-arrow.svg');
+    left: 30px;
 }
 
 .splide__arrow--next {
-    right: 30px;
     content: url('../img/portfolio/slider/icon-right-arrow.svg');
+    right: 30px;
 }
 
 .splide__pagination splide__pagination--ltr {
@@ -565,10 +648,11 @@ header::after {
 }
 
 .splide__pagination li .splide__pagination__page {
+    background-color: #EBDDD9;
+
     width: 15px;
     height: 7.5px;
     border-radius: 6px;
-    background-color: #EBDDD9;
 }
 
 .splide__pagination li .is-active {
@@ -579,17 +663,20 @@ header::after {
 
 #call-to-action {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    column-gap: 90px;
+    align-items: center;
+
     background-color: #EBDDD9;
+    
+    column-gap: 90px;
 }
 
 #call-to-action p {
-    margin-left: 64px;
-    padding: 124px 0 124px;
     font-size: 24px;
     font-weight: 500;
+
+    padding: 124px 0 124px;
+    margin-left: 64px;
 }
 
 #call-to-action p span {
@@ -599,18 +686,21 @@ header::after {
 
 #call-to-action form {
     display: grid;
-    column-gap: 83px;
+
     margin-right: 79px;
+    column-gap: 83px;
 }
 
 #call-to-action form input {
-    padding-left: 16px;
-    width: 320px;
-    height: 80px;
     font-family: var(--secondary);
     font-size: 24px;
     font-weight: 300;
+
+    width: 320px;
+    height: 80px;
+    padding-left: 16px;
     border: 2px solid #545353;
+
     transition: background-color 0.6s ease;
 }
 
@@ -630,15 +720,19 @@ header::after {
 
 #call-to-action form button {
     grid-column: 3;
+
+    background-color: #EBDDD9;
+    
     width: 260px;
     height: 80px;
-    background-color: #EBDDD9;
+    
     transition: all 0.6s ease;
 }
 
 #call-to-action form button:hover {
-    transform: scale(1.05);
     background-color: #fbfbfb6b;
+    
+    transform: scale(1.05);
 }
 
 /* Online registation */
@@ -647,31 +741,40 @@ header::after {
     position: fixed;
     top: 0;
     left: 0;
+    overflow-y: auto;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    
     z-index: 2;
+    
     transition: opacity 0.5s ease-in;
-    overflow-y: auto;
 }
 
 #registration-wrapper {
     position: relative;
     display: block;
-    margin: 0 auto;
     top: 0px;
-    border-radius: 20px;
-    width: 1700px;
+    
     background: #fbfbfb;
-    z-index: 3;
-    transition: opacity 0.5s ease-in;
+    
+    width: 1700px;
+    margin: 0 auto;
+    border-radius: 20px;
+    
     opacity: 0;
+    z-index: 3;
+    
+    transition: opacity 0.5s ease-in;
     transform: scale(0.8);
 }
 
 #registration-wrapper.none,
 #registration-overlay.none {
     opacity: 0;
+
     pointer-events: none;
 }
 
@@ -681,16 +784,19 @@ header::after {
 }
 
 #registration-wrapper h2 {
-    padding: 86px 0 99px 277px;
     font-size: 50px;
     font-weight: 600;
+    
+    padding: 86px 0 99px 277px;
 }
 
 #registration-wrapper form {
     display: grid;
-    padding-left: 102px;
+    
     font-size: 24px;
     font-weight: 500;
+    
+    padding-left: 102px;
 }
 
 #registration-wrapper form label {
@@ -699,16 +805,18 @@ header::after {
 
 #registration-wrapper form input,
 #registration-wrapper form select {
-    margin-bottom: 53px;
-    padding-left: 18px;
+    color: #7c7c7c;
+    
     width: 720px;
     height: 60px;
+    margin-bottom: 53px;
+    padding-left: 18px;
     border: 1.50px solid #7c7c7c;;
-    color: #7c7c7c;
 }
 
 label[for="client-name"] {
     grid-row: 1;
+    
     pointer-events: none;
 }
 
@@ -718,45 +826,54 @@ input[id="client-name"] {
 
 label[for="client-phonenumber"] {
     grid-row: 3;
+    
     pointer-events: none;
 }
 
 input[id="client-phonenumber"] {
-    grid-row: 4;
     font-family: var(--secondary);
     font-weight: 300;
     font-size: 24px;
+    
+    grid-row: 4;
 }
 
 label[for="service-type"] {
     grid-row: 5;
+    
     pointer-events: none;
 }
 
 select[id="service-type"] {
     grid-row: 6;
+    
+    background: url('../img/registration/arrow.png') no-repeat;
+    background-position: 680px;
+    
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: url('../img/registration/arrow.png') no-repeat;
-    background-position: 680px;
 }
 
 #registration-wrapper label[for="date-and-time"] {
     grid-row: 7;
+    
     pointer-events: none;
 }
 
 #registration-wrapper input[id="date"],
 #registration-wrapper input[id="time"] {
     grid-row: 8;
-    width: 340px;
+    
     background: url('../img/registration/arrow.png') no-repeat right;
     background-position: 300px;
+    
+    width: 340px;
 }
 
 #registration-wrapper input[id="time"] {
     position: relative;
+    
     margin-left: -778px;
 }
 
@@ -766,15 +883,18 @@ select[id="service-type"] {
 }
 
 #registration-wrapper input[id="private-policy"] {
-    width: 38px;
-    height: 38px;
     background-image: url('../img/registration/unchecked-checkbox-38px.png');
     background-size: cover;
+    
+    width: 38px;
+    height: 38px;
     border: none;
+    
+    cursor: pointer;
+    
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
 }
 
 #registration-wrapper input[id="private-policy"]:checked {
@@ -782,21 +902,23 @@ select[id="service-type"] {
 }
 
 #registration-wrapper label[for="private-policy"] {
-    margin-left: -1120px;
+    font-size: 16px;
+
     width: 616px;
     height: 38px;
-    font-size: 16px;
-    /* pointer-events: none; */
+    margin-left: -1120px;
 }
 
 #registration-wrapper label[for="private-policy"] a {
     text-decoration: underline;
+    
     cursor: pointer;
 }
 
 #registration-wrapper form button {
     position: relative;
     grid-row: 10;
+
     margin-bottom: 118px;
 }
 
@@ -805,34 +927,39 @@ select[id="service-type"] {
 }
 
 #registration-wrapper::after {
-    position: absolute;
     content: "";
-    right: 0px;
+    position: absolute;
     top: 0;
-    border-radius: 0 20px 20px 0;
-    width: 738px;
-    height: 1241px;
-
+    right: 0px;
+    
     background-image: url("../img/registration/reg-window-img.jpg");
     background-size: auto, auto;
+    
+    width: 738px;
+    height: 1241px;
+    border-radius: 0 20px 20px 0;
+
     z-index: 2;
 }
 
 #registration-wrapper::before {
     content: "";
     position: absolute;
-    left: 469px;
     bottom: 171px;
+    left: 469px;
+
+    background-color: #000;
+    
     width: 61px;
     height: 2px;
-    background-color: #000;
 }
 
 /* Contacts */
 
 #contacts {
-    display: grid;
     position: relative;
+    display: grid;
+
     margin: 0 auto;
     margin-top: 107px;
     margin-bottom: 278px;
@@ -840,24 +967,30 @@ select[id="service-type"] {
 
 #contacts h2 {
     grid-column: 3;
-    margin-right: 150px;
-    margin-bottom: 92px;
+    
     font-size: 96px;
     font-weight: 500;
     text-align: right;
+    
+    margin-right: 150px;
+    margin-bottom: 92px;
+    
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #contacts h3 {
-    margin-bottom: 25px;
     font-size: 36px;
     font-weight: 600;
+
+    margin-bottom: 25px;
 }
 
 #address,
 #working-hours {
     grid-column: 1;
     grid-row: 2;
+
+    margin-right: 30px;
     margin-left: 106px;
 }
 
@@ -870,6 +1003,7 @@ select[id="service-type"] {
 #social-networks {
     grid-column: 2;
     grid-row: 2;
+
     margin-right: 89px;
 }
 
@@ -881,34 +1015,42 @@ select[id="service-type"] {
 #address a,
 #telephone a,
 #working-hours p {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 400;
 }
 
 #social-networks a img {
+    width: 32px;
+    height: 32px;
     margin-right: 27px;
-    width: 35px;
-    height: 35px;
+}
+
+#social-networks a:last-child {
+    margin-right: 0px;
 }
 
 #map {
     position: relative;
     grid-column: 3;
     grid-row: 2;
-    margin-right: 94px;
+
     width: 886px;
     height: 569px;
+    margin-right: 94px;
 }
 
 #contacts::after {
     content: "";
     position: absolute;
-    margin-top: 1018px;
-    margin-left: 81px;
+    
+    background-color: #000;
+    
     max-width: 1700px;
     width: 100%;
     height: 2px;
-    background-color: #000;
+    margin-top: 1018px;
+    margin-left: 81px;
+
     pointer-events: none;
 }
 
@@ -917,8 +1059,9 @@ select[id="service-type"] {
 #footer {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+
     padding: 0 20px;
 }
 
@@ -926,35 +1069,41 @@ select[id="service-type"] {
     position: absolute;
     bottom: 0px;
     left: 0px;
+
     z-index: -1;
 }
 
 #bottom-logo {
     position: relative;
+    
+    width: 110px;
+    height: 110px;
     margin-right: 30px;
     margin-bottom: 10px;
     margin-left: 55px;
-    width: 110px;
-    height: 110px;
 }
 
 #footer p {
-    margin-bottom: 20px;
     font-size: 20px;
     font-weight: 500;
+
+    margin-bottom: 20px;
 }
 
 #footer .navbar {
-    list-style-type: none;
-    margin-bottom: 10px;
-    margin-left: 235px;
-    padding: 0;
     font-size: 20px;
     font-weight: 500;
+    
+    padding: 0;
+    margin-bottom: 10px;
+    margin-left: 235px;
+
+    list-style-type: none;
 }
 
 .navbar li {
     display: inline-block;
+
     margin-right: 59px;
 }
 
@@ -974,12 +1123,15 @@ select[id="service-type"] {
 #bottom-logo::after {
     content: "";
     position: absolute;
-    margin-bottom: 44px;
-    margin-left: 0px;
+
+    background-color: #000;
+    
     max-height: 97px;
     width: 2px;
     height: 100%;
-    background-color: #000;
+    margin-bottom: 44px;
+    margin-left: 0px;
+    
     pointer-events: none;
 
 }

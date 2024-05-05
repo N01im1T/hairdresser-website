@@ -344,8 +344,6 @@ document.getElementById('registration-overlay').addEventListener('click', functi
     }
 });
 
-// Contacts
-
 // Footer
 
 document.addEventListener('DOMContentLoaded', function() {

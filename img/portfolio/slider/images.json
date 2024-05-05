@@ -1,58 +1,83 @@
 {
     "images": [
         {
-            "name": "01.png",
+            "name": "01.jpeg",
             "alt": "Portfolio image_1",
-            "description": "Рельефное окрашивание-комбинация осветляющих процедур"
+            "description": "Рельефное окрашивание"
         },
         {
             "name": "02.png",
             "alt": "Portfolio image_2",
-            "description": "Тотальный блонд"
+            "description": "Шатуш"
         },
         {
-            "name": "03.png",
+            "name": "03.jpg",
             "alt": "Portfolio image_3",
-            "description": "Шатуш"
+            "description": "Стрижка боб-каре"
         },
         {
             "name": "04.jpg",
             "alt": "Portfolio image_4",
-            "description": "Стрижка \"Боб-каре\""
+            "description": "Cтрижка каре с мелированием и ровным срезом для тонких волос."
         },
         {
             "name": "05.jpg",
             "alt": "Portfolio image_5",
-            "description": "Cтрижка \"Каре\" с мелированием и ровным срезом для тонких волос."
+            "description": "Стрижка боб-каре"
         },
         {
             "name": "06.jpg",
             "alt": "Portfolio image_6",
-            "description": "Стрижка \"Боб-каре\""
+            "description": "Тотальный блонд"
         },
         {
             "name": "07.jpg",
             "alt": "Portfolio image_7",
-            "description": "Тотальный блонд"
+            "description": "Рельефный блонд"
         },
         {
             "name": "08.jpg",
             "alt": "Portfolio image_8",
-            "description": "Рельефный блонд"
+            "description": "Airtouch"
         },
         {
             "name": "09.jpg",
             "alt": "Portfolio image_9",
-            "description": "Окрашивание локанов"
+            "description": "Тотальный блонд"
         },
         {
-            "name": "10.jpg",
+            "name": "10.jpeg",
             "alt": "Portfolio image_10",
-            "description": "Airtouch"
+            "description": "Мужская модельная стрижка (классик)"
         },
         {
-            "name": "11.jpg",
+            "name": "11.png",
             "alt": "Portfolio image_11",
+            "description": "Рельефное окрашивание, комбинация осветляющих процедур"
+        },
+        {
+            "name": "12.png",
+            "alt": "Portfolio image_12",
+            "description": "Рельефное окрашивание"
+        },
+        {
+            "name": "13.jpeg",
+            "alt": "Portfolio image_13",
+            "description": "Стрижка боб с однотонным окрашиванием"
+        },
+        {
+            "name": "14.jpeg",
+            "alt": "Portfolio image_14",
+            "description": "Мужская модельная стрижка"
+        },
+        {
+            "name": "15.jpeg",
+            "alt": "Portfolio image_15",
+            "description": "Окрашивание в один тон"
+        },
+        {
+            "name": "16.png",
+            "alt": "Portfolio image_16",
             "description": "Тотальный блонд"
         }
     ]
