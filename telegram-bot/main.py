@@ -15,6 +15,7 @@ async def main():
     dp = Dispatcher()
     dp.include_router(router)
     await dp.start_polling(bot)
+    # await check_records_periodically(bot)
 
     
 if __name__ == '__main__':
