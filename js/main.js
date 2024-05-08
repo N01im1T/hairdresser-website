@@ -144,6 +144,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Online registration
 
+window.onload = function() {
+    var widgetFrame = document.querySelector('nr-rename');
+    if (widgetFrame) {
+        var widgetDocument = widgetFrame.contentDocument || widgetFrame.contentWindow.document;
+        var widgetBody = widgetDocument.body;
+        widgetBody.style.fontFamily = 'Raleway, sans-serif';
+    }
+};
+
 // Date and time pickers
 // document.addEventListener('DOMContentLoaded', function () {\
 //     const currentDate = new Date();
@@ -174,175 +183,175 @@ document.addEventListener('DOMContentLoaded', function () {
 //         locale: "ru"
 //     });
 // });
-document.addEventListener('DOMContentLoaded', async function () {
-    const dateInput = document.getElementById('date');
-    const timeInput = document.getElementById('time');
+// document.addEventListener('DOMContentLoaded', async function () {
+//     const dateInput = document.getElementById('date');
+//     const timeInput = document.getElementById('time');
 
-    let selectedService = null;
+//     let selectedService = null;
 
-    document.getElementById('service-type').addEventListener('change', function () {
-        selectedService = this.value;
-        updateDateTimePicker();
-    });
+//     document.getElementById('service-type').addEventListener('change', function () {
+//         selectedService = this.value;
+//         updateDateTimePicker();
+//     });
 
-    dateInput.addEventListener('change', function () {
-        updateDateTimePicker();
-    });
+//     dateInput.addEventListener('change', function () {
+//         updateDateTimePicker();
+//     });
 
-    async function updateDateTimePicker() {
-        if (!selectedService || !dateInput.value) return;
+//     async function updateDateTimePicker() {
+//         if (!selectedService || !dateInput.value) return;
 
-        // Request to server for time avaibility
-        const availability = await checkAvailability(selectedService, dateInput.value);
+//         const availability = await checkAvailability(selectedService, dateInput.value);
 
-        // Get time borders for chosen service
-        const timeLimits = getServiceTimeLimits(selectedService, availability);
+//         const timeLimits = getServiceTimeLimits(selectedService, availability);
 
-        // Set time borders for time input
-        flatpickr(timeInput, {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i",
-            time_24hr: true,
-            minTime: timeLimits.minTime,
-            maxTime: timeLimits.maxTime,
-            minuteIncrement: 5,
-            defaultDate: "today",
-            onChange: function(selectedDates, dateStr, instance) {
-                // Set min time if chose current date
-                if (flatpickr.formatDate(selectedDates[0], "d-m-Y") === flatpickr.formatDate(new Date(), "d-m-Y")) {
-                    const roundedTime = roundToNearest5Minutes(new Date());
-                    instance.set("minTime", roundedTime);
-                } else {
-                    instance.set("minTime", timeLimits.minTime);
-                }
-            }
-        });
-    }
+//         flatpickr(timeInput, {
+//             enableTime: true,
+//             noCalendar: true,
+//             dateFormat: "H:i",
+//             time_24hr: true,
+//             minTime: timeLimits.minTime,
+//             maxTime: timeLimits.maxTime,
+//             minuteIncrement: 5,
+//             defaultDate: "today",
+//             onChange: function(selectedDates, dateStr, instance) {
+//                 // Set min time if chose current date
+//                 if (flatpickr.formatDate(selectedDates[0], "d-m-Y") === flatpickr.formatDate(new Date(), "d-m-Y")) {
+//                     const roundedTime = roundToNearest5Minutes(new Date());
+//                     instance.set("minTime", roundedTime);
+//                 } else {
+//                     instance.set("minTime", timeLimits.minTime);
+//                 }
+//             }
+//         });
+//     }
 
-    // Request from server
-    async function checkAvailability(service, date) {
-        // const response = await fetch(`/check-availability?service=${service}&date=${date}`);
-        // return await response.json();
-        // return { availableTimeSlots: ["10:00", "11:00", "12:00"], unavailableTimeSlots: ["15:15", "16:15"] };
-    }
+//     // const { Client } = require("pg")
+//     // const dotenv = require("dotenv")
+//     // dotenv.config()
 
-    // Функция для получения ограничений времени в зависимости от выбранной услуги и доступности времени
-    function getServiceTimeLimits(service, availability) {
-        let minTime = "10:00";
-        let maxTime = "20:00";
+//     // async function checkAvailability(service, date) {
+//     //     // const response = await fetch(`/check-availability?service=${service}&date=${date}`);
+//     //     // return await response.json();
+//     //     // return { availableTimeSlots: ["10:00", "11:00", "12:00"], unavailableTimeSlots: ["15:15", "16:15"] };
+//     // }
 
-        if (availability) {
-            const availableTimeSlots = availability.availableTimeSlots;
-            const unavailableTimeSlots = availability.unavailableTimeSlots;
+//     // Функция для получения ограничений времени в зависимости от выбранной услуги и доступности времени
+//     function getServiceTimeLimits(service, availability) {
+//         let minTime = "10:00";
+//         let maxTime = "20:00";
 
-            if (availableTimeSlots && availableTimeSlots.length > 0) {
-                minTime = availableTimeSlots[0];
-                maxTime = availableTimeSlots[availableTimeSlots.length - 1];
-            }
+//         if (availability) {
+//             const availableTimeSlots = availability.availableTimeSlots;
+//             const unavailableTimeSlots = availability.unavailableTimeSlots;
 
-            if (unavailableTimeSlots && unavailableTimeSlots.length > 0) {
-                // Blocke unavailable time slots
-                unavailableTimeSlots.forEach(slot => {
-                    if (slot === minTime) minTime = incrementTime(slot);
-                    if (slot === maxTime) maxTime = decrementTime(slot);
-                });
-            }
-        }
+//             if (availableTimeSlots && availableTimeSlots.length > 0) {
+//                 minTime = availableTimeSlots[0];
+//                 maxTime = availableTimeSlots[availableTimeSlots.length - 1];
+//             }
 
-        return { minTime, maxTime };
-    }
+//             if (unavailableTimeSlots && unavailableTimeSlots.length > 0) {
+//                 // Blocke unavailable time slots
+//                 unavailableTimeSlots.forEach(slot => {
+//                     if (slot === minTime) minTime = incrementTime(slot);
+//                     if (slot === maxTime) maxTime = decrementTime(slot);
+//                 });
+//             }
+//         }
 
-    function roundToNearest5Minutes(date) {
-        const coeff = 1000 * 60 * 5;
-        return new Date(Math.ceil(date.getTime() / coeff) * coeff);
-    }
+//         return { minTime, maxTime };
+//     }
 
-    function incrementTime(time) {
-        const [hours, minutes] = time.split(":").map(Number);
-        let newHours = hours;
-        let newMinutes = minutes + 5;
-        if (newMinutes >= 60) {
-            newHours++;
-            newMinutes -= 60;
-        }
-        return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
-    }
+//     function roundToNearest5Minutes(date) {
+//         const coeff = 1000 * 60 * 5;
+//         return new Date(Math.ceil(date.getTime() / coeff) * coeff);
+//     }
 
-    function decrementTime(time) {
-        const [hours, minutes] = time.split(":").map(Number);
-        let newHours = hours;
-        let newMinutes = minutes - 5;
-        if (newMinutes < 0) {
-            newHours--;
-            newMinutes += 60;
-        }
-        return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
-    }
+//     function incrementTime(time) {
+//         const [hours, minutes] = time.split(":").map(Number);
+//         let newHours = hours;
+//         let newMinutes = minutes + 5;
+//         if (newMinutes >= 60) {
+//             newHours++;
+//             newMinutes -= 60;
+//         }
+//         return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
+//     }
 
-    flatpickr(dateInput, {
-        dateFormat: "d-m-Y",
-        minDate: "today",
-        maxDate: new Date().fp_incr(30),
-        locale: "ru"
-    });
-});
+//     function decrementTime(time) {
+//         const [hours, minutes] = time.split(":").map(Number);
+//         let newHours = hours;
+//         let newMinutes = minutes - 5;
+//         if (newMinutes < 0) {
+//             newHours--;
+//             newMinutes += 60;
+//         }
+//         return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
+//     }
 
-// Button processing
+//     flatpickr(dateInput, {
+//         dateFormat: "d-m-Y",
+//         minDate: "today",
+//         maxDate: new Date().fp_incr(30),
+//         locale: "ru"
+//     });
+// });
 
-const registrationButtonAboutSection = document.getElementById('about-call-to-action-button');
-const registrationButtonPricesWomenHairCuts = document.getElementById('prices-women-haircuts-button');
-const registrationButtonPricesMenHairCuts = document.getElementById('prices-men-haircuts-button');
-const registrationButtonPricesColoring = document.getElementById('prices-coloring-button');
-const registrationButtonCallToActionSection = document.getElementById('call-to-action-button');
+// // Button processing
 
-const onlineRegistrationDiv = document.getElementById('registration-wrapper');
+// const registrationButtonAboutSection = document.getElementById('about-call-to-action-button');
+// const registrationButtonPricesWomenHairCuts = document.getElementById('prices-women-haircuts-button');
+// const registrationButtonPricesMenHairCuts = document.getElementById('prices-men-haircuts-button');
+// const registrationButtonPricesColoring = document.getElementById('prices-coloring-button');
+// const registrationButtonCallToActionSection = document.getElementById('call-to-action-button');
 
-registrationButtonAboutSection.addEventListener('click', function() {
-    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
-});
+// const onlineRegistrationDiv = document.getElementById('registration-wrapper');
 
-registrationButtonPricesWomenHairCuts.addEventListener('click', function() {
-    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
-});
+// registrationButtonAboutSection.addEventListener('click', function() {
+//     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+// });
 
-registrationButtonPricesMenHairCuts.addEventListener('click', function() {
-    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
-});
+// registrationButtonPricesWomenHairCuts.addEventListener('click', function() {
+//     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+// });
 
-registrationButtonPricesColoring.addEventListener('click', function() {
-    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
-});
+// registrationButtonPricesMenHairCuts.addEventListener('click', function() {
+//     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+// });
 
-registrationButtonCallToActionSection.addEventListener('click', function() {
-    saveFormData();
-    loadFormData();
-    toggleDiv(onlineRegistrationDiv, 'registration-overlay');
-});
+// registrationButtonPricesColoring.addEventListener('click', function() {
+//     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+// });
 
-// Save local data for the registration form
-function saveFormData() {
-    const clientName = document.getElementById('name');
-    const clientPhoneNumber = document.getElementById('phone-number');
+// registrationButtonCallToActionSection.addEventListener('click', function() {
+//     saveFormData();
+//     loadFormData();
+//     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
+// });
+
+// // Save local data for the registration form
+// function saveFormData() {
+//     const clientName = document.getElementById('name');
+//     const clientPhoneNumber = document.getElementById('phone-number');
     
-    localStorage.setItem('clientName', clientName.value);
-    localStorage.setItem('clientPhoneNumber', clientPhoneNumber.value);
-}
+//     localStorage.setItem('clientName', clientName.value);
+//     localStorage.setItem('clientPhoneNumber', clientPhoneNumber.value);
+// }
 
-// Load local data when open the registration form
-function loadFormData() {
-    const clientName = document.getElementById('client-name');
-    const clientPhoneNumber = document.getElementById('client-phonenumber');
+// // Load local data when open the registration form
+// function loadFormData() {
+//     const clientName = document.getElementById('client-name');
+//     const clientPhoneNumber = document.getElementById('client-phonenumber');
 
-    clientName.value = localStorage.getItem('clientName') || '';
-    clientPhoneNumber.value = localStorage.getItem('clientPhoneNumber') || '';
-}
+//     clientName.value = localStorage.getItem('clientName') || '';
+//     clientPhoneNumber.value = localStorage.getItem('clientPhoneNumber') || '';
+// }
 
-document.getElementById('registration-overlay').addEventListener('click', function() {
-    if (event.target.id === 'registration-overlay') {
-        closeDiv(onlineRegistrationDiv, 'registration-overlay');
-    }
-});
+// document.getElementById('registration-overlay').addEventListener('click', function() {
+//     if (event.target.id === 'registration-overlay') {
+//         closeDiv(onlineRegistrationDiv, 'registration-overlay');
+//     }
+// });
 
 // Footer
 

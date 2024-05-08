@@ -4,7 +4,7 @@
 
 :root {
     --font-family: "Raleway", sans-serif;
-    --secondary: "Roboto";
+    --minor-font-family: "Roboto";
 }
 
 body {
@@ -692,7 +692,7 @@ header::after {
 }
 
 #call-to-action form input {
-    font-family: var(--secondary);
+    font-family: var(--minor-font-family);
     font-size: 24px;
     font-weight: 300;
 
@@ -736,6 +736,10 @@ header::after {
 }
 
 /* Online registation */
+
+.nr-rename {
+    font-family: var(--font-family) !important;
+}
 
 #registration-overlay {
     position: fixed;
@@ -831,7 +835,7 @@ label[for="client-phonenumber"] {
 }
 
 input[id="client-phonenumber"] {
-    font-family: var(--secondary);
+    font-family: var(--minor-font-family);
     font-weight: 300;
     font-size: 24px;
     
