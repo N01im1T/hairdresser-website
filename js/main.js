@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.text())
         .then(data => {
             console.log(data);
-            // Дополнительные действия, которые вы хотите выполнить после успешной отправки данных
+            // Дополнительные действия
         })
         .catch(error => {
             console.error('Ошибка:', error);
