@@ -58,6 +58,10 @@ button {
     transition: transform 0.6s ease;
 }
 
+a button {
+    color: #000;
+}
+
 a {
     color: #000;
 }
@@ -517,9 +521,9 @@ header::after {
     font-size: 36px;
 }
 
-#prices-women-haircuts button,
-#prices-men-haircuts button,
-#prices-coloring button {
+#prices-women-haircuts a,
+#prices-men-haircuts a,
+#prices-coloring a {
     grid-template-columns: auto 1fr;
     justify-self: end;
 }
@@ -575,6 +579,8 @@ header::after {
 
 #portfolio {
     position: relative;
+
+    margin-bottom: 153px;
 }
 
 .slider {
@@ -583,8 +589,7 @@ header::after {
     overflow: hidden;
 
     width: 100%;
-    max-height: 700px;
-    margin-bottom: 193px;
+    height: 740px;
 
     touch-action: pan-y;
 }
@@ -643,6 +648,13 @@ header::after {
     right: 30px;
 }
 
+.splide__pagination {
+    position: absolute;
+
+    height: 16px;
+    margin: 0;
+}
+
 .splide__pagination splide__pagination--ltr {
     column-gap: 10px;
 }
@@ -650,8 +662,6 @@ header::after {
 .splide__pagination li .splide__pagination__page {
     background-color: #EBDDD9;
 
-    width: 15px;
-    height: 7.5px;
     border-radius: 6px;
 }
 
@@ -721,10 +731,13 @@ header::after {
 #call-to-action form button {
     grid-column: 3;
 
+    font-size: 24px;
+
     background-color: #EBDDD9;
     
     width: 260px;
     height: 80px;
+    padding: 0px 54px 0 54px;
     
     transition: all 0.6s ease;
 }
@@ -733,229 +746,6 @@ header::after {
     background-color: #fbfbfb6b;
     
     transform: scale(1.05);
-}
-
-/* Online registation */
-
-.nr-rename {
-    font-family: var(--font-family) !important;
-}
-
-#registration-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-    
-    background-color: rgba(0, 0, 0, 0.5);
-    
-    width: 100%;
-    height: 100%;
-    
-    z-index: 2;
-    
-    transition: opacity 0.5s ease-in;
-}
-
-#registration-wrapper {
-    position: relative;
-    display: block;
-    top: 0px;
-    
-    background: #fbfbfb;
-    
-    width: 1700px;
-    margin: 0 auto;
-    border-radius: 20px;
-    
-    opacity: 0;
-    z-index: 3;
-    
-    transition: opacity 0.5s ease-in;
-    transform: scale(0.8);
-}
-
-#registration-wrapper.none,
-#registration-overlay.none {
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-#registration-wrapper:not(.none),
-#registration-overlay:not(.none) {
-    opacity: 1;
-}
-
-#registration-wrapper h2 {
-    font-size: 50px;
-    font-weight: 600;
-    
-    padding: 86px 0 99px 277px;
-}
-
-#registration-wrapper form {
-    display: grid;
-    
-    font-size: 24px;
-    font-weight: 500;
-    
-    padding-left: 102px;
-}
-
-#registration-wrapper form label {
-    padding-bottom: 30px;
-}
-
-#registration-wrapper form input,
-#registration-wrapper form select {
-    color: #7c7c7c;
-    
-    width: 720px;
-    height: 60px;
-    margin-bottom: 53px;
-    padding-left: 18px;
-    border: 1.50px solid #7c7c7c;;
-}
-
-label[for="client-name"] {
-    grid-row: 1;
-    
-    pointer-events: none;
-}
-
-input[id="client-name"] {
-    grid-row: 2;
-}
-
-label[for="client-phonenumber"] {
-    grid-row: 3;
-    
-    pointer-events: none;
-}
-
-input[id="client-phonenumber"] {
-    font-family: var(--minor-font-family);
-    font-weight: 300;
-    font-size: 24px;
-    
-    grid-row: 4;
-}
-
-label[for="service-type"] {
-    grid-row: 5;
-    
-    pointer-events: none;
-}
-
-select[id="service-type"] {
-    grid-row: 6;
-    
-    background: url('../img/registration/arrow.png') no-repeat;
-    background-position: 680px;
-    
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-#registration-wrapper label[for="date-and-time"] {
-    grid-row: 7;
-    
-    pointer-events: none;
-}
-
-#registration-wrapper input[id="date"],
-#registration-wrapper input[id="time"] {
-    grid-row: 8;
-    
-    background: url('../img/registration/arrow.png') no-repeat right;
-    background-position: 300px;
-    
-    width: 340px;
-}
-
-#registration-wrapper input[id="time"] {
-    position: relative;
-    
-    margin-left: -778px;
-}
-
-#registration-wrapper input[id="private-policy"],
-#registration-wrapper label[for="private-policy"] {
-    grid-row: 9;
-}
-
-#registration-wrapper input[id="private-policy"] {
-    background-image: url('../img/registration/unchecked-checkbox-38px.png');
-    background-size: cover;
-    
-    width: 38px;
-    height: 38px;
-    border: none;
-    
-    cursor: pointer;
-    
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-#registration-wrapper input[id="private-policy"]:checked {
-    background-image: url('../img/registration/checked-checkbox-38px.png'); /* Если хотите показать другую иконку при выборе */
-}
-
-#registration-wrapper label[for="private-policy"] {
-    font-size: 16px;
-
-    width: 616px;
-    height: 38px;
-    margin-left: -1120px;
-}
-
-#registration-wrapper label[for="private-policy"] a {
-    text-decoration: underline;
-    
-    cursor: pointer;
-}
-
-#registration-wrapper form button {
-    position: relative;
-    grid-row: 10;
-
-    margin-bottom: 118px;
-}
-
-#registration-wrapper form button:hover {
-    transform: scale(1.05);
-}
-
-#registration-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0px;
-    
-    background-image: url("../img/registration/reg-window-img.jpg");
-    background-size: auto, auto;
-    
-    width: 738px;
-    height: 1241px;
-    border-radius: 0 20px 20px 0;
-
-    z-index: 2;
-}
-
-#registration-wrapper::before {
-    content: "";
-    position: absolute;
-    bottom: 171px;
-    left: 469px;
-
-    background-color: #000;
-    
-    width: 61px;
-    height: 2px;
 }
 
 /* Contacts */

@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 lazyLoad: 'nearby',
                 autoWidth: true,
                 arrows : true,
+                omitEnd: true,
             } );
 
             splide.on('mounted', function () {
@@ -141,163 +142,32 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Ошибка загрузки изображений:', error));
 });
 
+//Call to action handler
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('call-to-action-button').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var formData = new FormData();
+        formData.append('name', document.getElementById('name').value);
+        formData.append('phone-number', document.getElementById('phone-number').value);
+
+        fetch('/submit-from', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            // Дополнительные действия, которые вы хотите выполнить после успешной отправки данных
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+    });
+});
 
 // Online registration
-
-window.onload = function() {
-    var widgetFrame = document.querySelector('nr-rename');
-    if (widgetFrame) {
-        var widgetDocument = widgetFrame.contentDocument || widgetFrame.contentWindow.document;
-        var widgetBody = widgetDocument.body;
-        widgetBody.style.fontFamily = 'Raleway, sans-serif';
-    }
-};
-
-// Date and time pickers
-// document.addEventListener('DOMContentLoaded', function () {\
-//     const currentDate = new Date();
-//     const currentHour = currentDate.getHours();
-//     const currentMinutes = currentDate.getMinutes();
-
-//     const minDate = currentDate;
-//     const maxDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate());
-
-//     const minTime = (currentHour < 10 || (currentHour === 10 && currentMinutes === 0)) ? "10:00" : "20:00";
-//     const maxTime = (currentHour >= 20) ? "20:00" : "23:59";
-
-//     flatpickr("#date", {
-//         dateFormat: "d-m-Y",
-//         minDate: minDate,
-//         maxDate: maxDate,
-//         locale: "ru"
-//     });
-
-//     flatpickr("#time", {
-//         enableTime: true,
-//         noCalendar: true,
-//         dateFormat: "H:i",
-//         time_24hr: true,
-//         minTime: minTime,
-//         maxTime: maxTime,
-//         minuteIncrement: 5,
-//         locale: "ru"
-//     });
-// });
-// document.addEventListener('DOMContentLoaded', async function () {
-//     const dateInput = document.getElementById('date');
-//     const timeInput = document.getElementById('time');
-
-//     let selectedService = null;
-
-//     document.getElementById('service-type').addEventListener('change', function () {
-//         selectedService = this.value;
-//         updateDateTimePicker();
-//     });
-
-//     dateInput.addEventListener('change', function () {
-//         updateDateTimePicker();
-//     });
-
-//     async function updateDateTimePicker() {
-//         if (!selectedService || !dateInput.value) return;
-
-//         const availability = await checkAvailability(selectedService, dateInput.value);
-
-//         const timeLimits = getServiceTimeLimits(selectedService, availability);
-
-//         flatpickr(timeInput, {
-//             enableTime: true,
-//             noCalendar: true,
-//             dateFormat: "H:i",
-//             time_24hr: true,
-//             minTime: timeLimits.minTime,
-//             maxTime: timeLimits.maxTime,
-//             minuteIncrement: 5,
-//             defaultDate: "today",
-//             onChange: function(selectedDates, dateStr, instance) {
-//                 // Set min time if chose current date
-//                 if (flatpickr.formatDate(selectedDates[0], "d-m-Y") === flatpickr.formatDate(new Date(), "d-m-Y")) {
-//                     const roundedTime = roundToNearest5Minutes(new Date());
-//                     instance.set("minTime", roundedTime);
-//                 } else {
-//                     instance.set("minTime", timeLimits.minTime);
-//                 }
-//             }
-//         });
-//     }
-
-//     // const { Client } = require("pg")
-//     // const dotenv = require("dotenv")
-//     // dotenv.config()
-
-//     // async function checkAvailability(service, date) {
-//     //     // const response = await fetch(`/check-availability?service=${service}&date=${date}`);
-//     //     // return await response.json();
-//     //     // return { availableTimeSlots: ["10:00", "11:00", "12:00"], unavailableTimeSlots: ["15:15", "16:15"] };
-//     // }
-
-//     // Функция для получения ограничений времени в зависимости от выбранной услуги и доступности времени
-//     function getServiceTimeLimits(service, availability) {
-//         let minTime = "10:00";
-//         let maxTime = "20:00";
-
-//         if (availability) {
-//             const availableTimeSlots = availability.availableTimeSlots;
-//             const unavailableTimeSlots = availability.unavailableTimeSlots;
-
-//             if (availableTimeSlots && availableTimeSlots.length > 0) {
-//                 minTime = availableTimeSlots[0];
-//                 maxTime = availableTimeSlots[availableTimeSlots.length - 1];
-//             }
-
-//             if (unavailableTimeSlots && unavailableTimeSlots.length > 0) {
-//                 // Blocke unavailable time slots
-//                 unavailableTimeSlots.forEach(slot => {
-//                     if (slot === minTime) minTime = incrementTime(slot);
-//                     if (slot === maxTime) maxTime = decrementTime(slot);
-//                 });
-//             }
-//         }
-
-//         return { minTime, maxTime };
-//     }
-
-//     function roundToNearest5Minutes(date) {
-//         const coeff = 1000 * 60 * 5;
-//         return new Date(Math.ceil(date.getTime() / coeff) * coeff);
-//     }
-
-//     function incrementTime(time) {
-//         const [hours, minutes] = time.split(":").map(Number);
-//         let newHours = hours;
-//         let newMinutes = minutes + 5;
-//         if (newMinutes >= 60) {
-//             newHours++;
-//             newMinutes -= 60;
-//         }
-//         return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
-//     }
-
-//     function decrementTime(time) {
-//         const [hours, minutes] = time.split(":").map(Number);
-//         let newHours = hours;
-//         let newMinutes = minutes - 5;
-//         if (newMinutes < 0) {
-//             newHours--;
-//             newMinutes += 60;
-//         }
-//         return `${newHours.toString().padStart(2, '0')}:${newMinutes.toString().padStart(2, '0')}`;
-//     }
-
-//     flatpickr(dateInput, {
-//         dateFormat: "d-m-Y",
-//         minDate: "today",
-//         maxDate: new Date().fp_incr(30),
-//         locale: "ru"
-//     });
-// });
-
-// // Button processing
 
 // const registrationButtonAboutSection = document.getElementById('about-call-to-action-button');
 // const registrationButtonPricesWomenHairCuts = document.getElementById('prices-women-haircuts-button');
