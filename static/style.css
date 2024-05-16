@@ -748,6 +748,10 @@ header::after {
     transform: scale(1.05);
 }
 
+#message {
+    display: none;
+}
+
 /* Contacts */
 
 #contacts {

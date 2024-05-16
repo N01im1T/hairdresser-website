@@ -144,28 +144,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Call to action handler
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('call-to-action-button').addEventListener('click', function(event) {
-        event.preventDefault();
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const data = {
+        name: formData.get('name'),
+        phone_number: formData.get('phone-number'),
+    };
 
-        var formData = new FormData();
-        formData.append('name', document.getElementById('name').value);
-        formData.append('phone-number', document.getElementById('phone-number').value);
-
-        fetch('/submit-from', {
+    try {
+        const response = await fetch('http://127.0.0.1:5000/submit-form', {
             method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data);
-            // Дополнительные действия
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams(data),
         });
-    });
+
+        const result = await response.json();
+        displayMessage(result.message || 'нету результата');
+
+    } catch (error) {
+        displayMessage('Произошла ошибка, попробуйте еще раз.');
+        console.error('Error:', error);
+    }
 });
+
+function displayMessage(message) {
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = message;
+    messageElement.style.display = 'block';
+}
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     document.getElementById('call-to-action-button').addEventListener('click', function(event) {
+//         event.preventDefault();
+
+//         var formData = new FormData();
+//         formData.append('name', document.getElementById('name').value);
+//         formData.append('phone-number', document.getElementById('phone-number').value);
+
+//         fetch('/submit-from', {
+//             method: 'POST',
+//             body: formData
+//         })
+//         .then(response => response.text())
+//         .then(data => {
+//             console.log(data);
+            // Дополнительные действия
+//         })
+//         .catch(error => {
+//             console.error('Ошибка:', error);
+//         });
+//     });
+// });
 
 // Online registration
 
@@ -199,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //     toggleDiv(onlineRegistrationDiv, 'registration-overlay');
 // });
 
-// // Save local data for the registration form
+// Save local data for the registration form
 // function saveFormData() {
 //     const clientName = document.getElementById('name');
 //     const clientPhoneNumber = document.getElementById('phone-number');
@@ -208,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //     localStorage.setItem('clientPhoneNumber', clientPhoneNumber.value);
 // }
 
-// // Load local data when open the registration form
+// Load local data when open the registration form
 // function loadFormData() {
 //     const clientName = document.getElementById('client-name');
 //     const clientPhoneNumber = document.getElementById('client-phonenumber');

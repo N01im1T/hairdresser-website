@@ -2,9 +2,9 @@ import os
 import asyncio
 import aiohttp
 import logging
-from quart import Quart, request
+from quart import Quart, request, jsonify
 from aiogram import Bot, Dispatcher, types
-import logging
+from quart_cors import cors
 from dotenv import load_dotenv
 
 
@@ -25,17 +25,22 @@ async def cmd_start(message: types.Message) -> None:
 
 
 app = Quart(__name__)
+app = cors(app, allow_origin="http://127.0.0.1:5500")
 
 @app.route('/submit-form', methods=['POST'])
 async def submit_form() -> str:
-    data = request.form
-    if 'name' in data and 'phone-number' in data:
-        name = data['name']
-        phone_number = data['phone-number']
-        await send_to_telegram(name, phone_number)
-        return "Данные успешно отправлены!"
+    data = await request.form
+    
+    if data:
+        if 'name' in data and 'phone-number' in data:
+            name = data['name']
+            phone_number = data['phone-number']
+            await send_to_telegram(name, phone_number)
+            return jsonify({"message":"Данные успешно отправлены!"})
+        else:
+            return jsonify({"error":"Произошла ошибка, проверьте введенные данные."})
     else:
-        return "Произошла ошибка, проверьте введенные данные."
+        return jsonify({"error":"Данные не были отправлены."})
     
     
 async def send_to_telegram(name, phone_number) -> None:
@@ -47,11 +52,16 @@ async def send_to_telegram(name, phone_number) -> None:
                 "text": f"Новая заявка!\nИмя: {name}\nНомер телефона: {phone_number}"
             }
         ) as resp:
-            print(await resp.text())
+            response_text = await resp.text()
+            print(response_text)  # Log the response from Telegram
+            if resp.status != 200:
+                logging.error(f"Failed to send message to Telegram: {response_text}")
     
 
 async def main() -> None:
-    await asyncio.gather(bot_polling(), app.run_task(debug=True))
+    bot_task = asyncio.create_task(bot_polling())
+    app_task = asyncio.create_task(app.run_task(debug=True, port=5000))
+    await asyncio.gather(bot_task, app_task)
 
 
 async def bot_polling() -> None:
