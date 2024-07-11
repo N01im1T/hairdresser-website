@@ -5,6 +5,11 @@
 :root {
     --font-family: "Raleway", sans-serif;
     --minor-font-family: "Roboto";
+    
+    --background-color: #fbfbfb;
+
+    --primary-color: #000;
+    --secondary-color: #fff;
 }
 
 body {
@@ -13,57 +18,33 @@ body {
 
     font-family: var(--font-family);
 
-    background: #fbfbfb;
+    background: var(--background-color);
 
     max-width: 1920px;
     margin: 0 auto;
 }
 
-body::before {
-    content: url('../img/right-background-el.svg');
-    position: absolute;
-    top: 1123px;
-    right: 0px;
-
-    width: 594.5px;
-    height: 1675px;
-
-    z-index: -1;
-}
-
-body::after {
-    content: url('../img/left-background-el.svg');
-    position: absolute;
-    top: 2256px;
-    left: 0px;
-
-    width: 594.5px;
-    height: 1875px;
-
-    z-index: -1;
-}
-
 button {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.1em;
 
     background: rgba(217, 217, 217, 0);
-    background: #fff;
+    background: var(--secondary-color);
 
-    width: 345px;
-    height: 100px;
-    border: 2px solid #000;
+    width: 21.5rem;
+    height: 6.25rem;
+    border: 2px solid var(--primary-color);
 
     transition: transform 0.6s ease;
 }
 
 a button {
-    color: #000;
+    color: var(--primary-color);
 }
 
 a {
-    color: #000;
+    color: var(--primary-color);
 }
 
 a:hover {
@@ -71,7 +52,7 @@ a:hover {
 }
 
 a:visited {
-    color: #000;
+    color: var(--primary-color);
 }
 
 .none {
@@ -81,32 +62,32 @@ a:visited {
 #scroll-to-top {
     position: fixed;
     display: block;
-    right: 20px;
-    bottom: 20px;
+    right: 1.25rem;
+    bottom: 1.25rem;
 
     text-align: center;
-    color: white;
-    line-height: 40px;
+    color: var(--secondary-color);
+    line-height: 2.5rem;
 
     background-color: #5045424d;
     
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     
     cursor: pointer;
     opacity: 0;
     z-index: 5;
 
-    transition:all 0.6s ease;
+    transition: all 0.6s ease;
 }
   
 #scroll-icon {
-    width: 20px;
-    height: 20px;
-    margin: 14px auto;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 1rem auto;
+    border-top: 2px solid var(--secondary-color);
+    border-right: 2px solid var(--secondary-color);
 
     transform: rotate(-45deg);
 }
@@ -119,74 +100,64 @@ a:visited {
 
 /* Navigation */
 
+.header {
+    position: relative;
+
+    padding: 1.25rem 2.5rem 0 2.5rem;
+}
+
+.header::after {
+    content: url("../img/header/header-img.png");
+    position: absolute;
+    top: 0;
+    right: 12rem;
+
+    max-width: 64rem;
+    width: 100%;
+    height: auto;
+
+    z-index: -1;
+}
+
 .navy-item {
     display: flex;
+    flex-direction: row;
 
-    max-width: 100%;
-    margin: 20px 0 0 40px;
     align-items: center;
 }
 
 .navbar {
-    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4rem;
+
+    font-size: 1.5rem;
     font-weight: 500;
 
     cursor: pointer;
-}
-
-.navbar li {
-    display: inline-block;
-
-    margin-right: 52px;
-}
-
-.navbar li:first-child {
-    margin-left: 0;
-}
-
-.navbar li:last-child {
-    margin-right: 0;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 58px;
-    
-    background-image: url("../img/header/header-img.png");
-    background-size: auto, auto;
-
-    width: 1023px;
-    height: 1080px;
-
-    z-index: -1;
 }
 
 /* Main */
 
 /* About */
 
-#about {
-    display: block;
-    
-    max-width: 100%;
+.about {
+    padding-top: 9rem;
 }
 
-#about-wrapper {
-    width: 823px;
-    height: 338px;
-    margin: 150px 0 0 123px;
-}
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
 
-#about-profession {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 500;
+
+    padding-left: 7.7rem;
 }
 
-#about-name {
-    font-size: 128px;
+.about-name {
+    font-size: 8rem;
     font-weight: 500;
     
     text-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
@@ -897,20 +868,6 @@ header::after {
     margin-left: 235px;
 
     list-style-type: none;
-}
-
-.navbar li {
-    display: inline-block;
-
-    margin-right: 59px;
-}
-
-.navbar li:first-child {
-    margin-left: 0;
-}
-
-.navbar li:last-child {
-    margin-right: 0;
 }
 
 .reserved-rights {
