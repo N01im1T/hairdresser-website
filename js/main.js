@@ -1,89 +1,105 @@
 // Nav section
 
-document.addEventListener('DOMContentLoaded', function() {
-    function scrollToElement(elementId) {
-        var element = document.getElementById(elementId);
-        if (element) {
-            window.scrollTo({
-                top: element.offsetTop,
-                behavior: 'smooth'
-            });
-        }
+document.addEventListener('DOMContentLoaded', function () {
+  function scrollToElement(elementId) {
+    var element = document.getElementById(elementId)
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth',
+      })
     }
+  }
 
-    document.getElementById('to-about-me-nav').addEventListener('click', function() {
-        scrollToElement('about-me');
-    });
+  document
+    .getElementById('to-about-me-nav')
+    .addEventListener('click', function () {
+      scrollToElement('about-me')
+    })
 
-    document.getElementById('to-services-nav').addEventListener('click', function() {
-        scrollToElement('services');
-    });
+  document
+    .getElementById('to-services-nav')
+    .addEventListener('click', function () {
+      scrollToElement('services')
+    })
 
-    document.getElementById('to-portfolio-nav').addEventListener('click', function() {
-        scrollToElement('portfolio');
-    });
+  document
+    .getElementById('to-portfolio-nav')
+    .addEventListener('click', function () {
+      scrollToElement('portfolio')
+    })
 
-    document.getElementById('to-contacts-nav').addEventListener('click', function() {
-        scrollToElement('contacts');
-    });
-});
+  document
+    .getElementById('to-contacts-nav')
+    .addEventListener('click', function () {
+      scrollToElement('contacts')
+    })
+})
 
 // About section
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('to-portfolio').addEventListener('click', function() {
-        var portfolioElement = document.getElementById('portfolio');
-        if (portfolioElement) {
-            window.scrollTo({
-                top: portfolioElement.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', function () {
+  document
+    .getElementById('to-portfolio')
+    .addEventListener('click', function () {
+      var portfolioElement = document.getElementById('portfolio')
+      if (portfolioElement) {
+        window.scrollTo({
+          top: portfolioElement.offsetTop,
+          behavior: 'smooth',
+        })
+      }
+    })
+})
 
 // Service section
 
 // Service prices show/hide
 
-const womenHaircutsButton = document.getElementById('women-haircuts-button');
-const menHaircutsButton = document.getElementById('men-haircuts-button');
-const coloringButton = document.getElementById('coloring-button');
+const womenHaircutsButton = document.getElementById('women-haircuts-button')
+const menHaircutsButton = document.getElementById('men-haircuts-button')
+const coloringButton = document.getElementById('coloring-button')
 
-const womenHaircutsDiv = document.getElementById('prices-women-haircuts');
-const menHaircutsDiv = document.getElementById('prices-men-haircuts');
-const coloringDiv = document.getElementById('prices-coloring');
+const womenHaircutsDiv = document.getElementById('prices-women-haircuts')
+const menHaircutsDiv = document.getElementById('prices-men-haircuts')
+const coloringDiv = document.getElementById('prices-coloring')
 
-womenHaircutsButton.addEventListener('click', function() {
-    toggleDiv(womenHaircutsDiv, 'overlay-women-haircuts');
-});
-menHaircutsButton.addEventListener('click', function() {
-    toggleDiv(menHaircutsDiv, 'overlay-men-haircuts');
-});
-coloringButton.addEventListener('click', function() {
-    toggleDiv(coloringDiv, 'overlay-coloring');
-});
+womenHaircutsButton.addEventListener('click', function () {
+  toggleDiv(womenHaircutsDiv, 'overlay-women-haircuts')
+})
+menHaircutsButton.addEventListener('click', function () {
+  toggleDiv(menHaircutsDiv, 'overlay-men-haircuts')
+})
+coloringButton.addEventListener('click', function () {
+  toggleDiv(coloringDiv, 'overlay-coloring')
+})
 
 function toggleDiv(div, overlay) {
-    div.classList.toggle('none');
-    document.getElementById(overlay).classList.toggle('none');
-    document.body.style.overflowY = "hidden";
+  div.classList.toggle('none')
+  document.getElementById(overlay).classList.toggle('none')
+  document.body.style.overflowY = 'hidden'
 }
 
-document.getElementById('overlay-women-haircuts').addEventListener('click', function() {
-    closeDiv(womenHaircutsDiv, 'overlay-women-haircuts');
-});
-document.getElementById('overlay-men-haircuts').addEventListener('click', function() {
-    closeDiv(menHaircutsDiv, 'overlay-men-haircuts');
-});
-document.getElementById('overlay-coloring').addEventListener('click', function() {
-    closeDiv(coloringDiv, 'overlay-coloring');
-});
+document
+  .getElementById('overlay-women-haircuts')
+  .addEventListener('click', function () {
+    closeDiv(womenHaircutsDiv, 'overlay-women-haircuts')
+  })
+document
+  .getElementById('overlay-men-haircuts')
+  .addEventListener('click', function () {
+    closeDiv(menHaircutsDiv, 'overlay-men-haircuts')
+  })
+document
+  .getElementById('overlay-coloring')
+  .addEventListener('click', function () {
+    closeDiv(coloringDiv, 'overlay-coloring')
+  })
 
 function closeDiv(div, overlay) {
-    div.classList.add('none');
-    document.getElementById(overlay).classList.add('none');
-    document.body.style.overflowY = "auto";
+  div.classList.add('none')
+  document.getElementById(overlay).classList.add('none')
+  document.body.style.overflowY = 'auto'
 }
 
 // Portfolio section
@@ -91,90 +107,91 @@ function closeDiv(div, overlay) {
 // Portfolio slider
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('/img/portfolio/slider/images.json')
-        .then(response => response.json())
-        .then(data => {
-            const splideList = document.querySelector('.splide__list');
-            
-            var splide = new Splide( '#slider-container', {
-                type   : 'loop',
-                perPage: 3,
-                focus  : 'center',
-                drag   : 'free',
-                snap   : true,
-                gap    : '70px',
-                lazyLoad: 'nearby',
-                autoWidth: true,
-                arrows : true,
-                omitEnd: true,
-            } );
+  fetch('/img/portfolio/slider/images.json')
+    .then((response) => response.json())
+    .then((data) => {
+      const splideList = document.querySelector('.splide__list')
 
-            splide.on('mounted', function () {
-                splide.go(splide.length / 2);
-            });
+      var splide = new Splide('#slider-container', {
+        type: 'loop',
+        perPage: 3,
+        focus: 'center',
+        drag: 'free',
+        snap: true,
+        gap: '70px',
+        lazyLoad: 'nearby',
+        autoWidth: true,
+        arrows: true,
+        omitEnd: true,
+      })
 
-            splide.mount();
+      splide.on('mounted', function () {
+        splide.go(splide.length / 2)
+      })
 
-            data.images.forEach((image, index) => {
-                const splideSlide = document.createElement('li');
-                splideSlide.classList.add('splide__slide');
-                splideSlide.setAttribute('itemprop', 'itemListElement');
-                splideSlide.setAttribute('itemscope', '');
-                splideSlide.setAttribute('itemtype', 'http://schema.org/HairSalon');
-                
-                const img = document.createElement('img');
-                img.src = `/img/portfolio/slider/${image.name}`;
-                img.alt = image.alt;
-                img.setAttribute('itemprop', 'image');
+      splide.mount()
 
-                const meta = document.createElement('meta');
-                meta.setAttribute('itemprop', 'description');
-                meta.content = image.description;
+      data.images.forEach((image, index) => {
+        const splideSlide = document.createElement('li')
+        splideSlide.classList.add('splide__slide')
+        splideSlide.setAttribute('itemprop', 'itemListElement')
+        splideSlide.setAttribute('itemscope', '')
+        splideSlide.setAttribute('itemtype', 'http://schema.org/HairSalon')
 
-                splideSlide.appendChild(img);
-                splideSlide.appendChild(meta);
+        const img = document.createElement('img')
+        img.src = `/img/portfolio/slider/${image.name}`
+        img.alt = image.alt
+        img.setAttribute('itemprop', 'image')
 
-                splideList.appendChild(splideSlide);
+        const meta = document.createElement('meta')
+        meta.setAttribute('itemprop', 'description')
+        meta.content = image.description
 
-                splide.add(splideSlide);
-            });
-        })
-        .catch(error => console.error('Ошибка загрузки изображений:', error));
-});
+        splideSlide.appendChild(img)
+        splideSlide.appendChild(meta)
+
+        splideList.appendChild(splideSlide)
+
+        splide.add(splideSlide)
+      })
+    })
+    .catch((error) => console.error('Ошибка загрузки изображений:', error))
+})
 
 //Call to action handler
 
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(e.target);
+document
+  .getElementById('contact-form')
+  .addEventListener('submit', async (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
     const data = {
-        name: formData.get('name'),
-        phone_number: formData.get('phone-number'),
-    };
+      name: formData.get('name'),
+      phone_number: formData.get('phone-number'),
+    }
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/submit-form', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams(data),
-        });
+      const response = await fetch('http://127.0.0.1:5000/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(data),
+      })
 
-        const result = await response.json();
-        displayMessage(result.message || 'нету результата');
-
+      const result = await response.json()
+      displayMessage(result.message || 'нету результата')
     } catch (error) {
-        displayMessage('Произошла ошибка, попробуйте еще раз.');
-        console.error('Error:', error);
+      displayMessage('Произошла ошибка, попробуйте еще раз.')
+      console.error('Error:', error)
     }
-});
+  })
 
 function displayMessage(message) {
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = message;
-    messageElement.style.display = 'block';
+  const messageElement = document.getElementById('message')
+  messageElement.textContent = message
+  messageElement.style.display = 'block'
 }
 
 // document.addEventListener('DOMContentLoaded', function() {
@@ -192,7 +209,7 @@ function displayMessage(message) {
 //         .then(response => response.text())
 //         .then(data => {
 //             console.log(data);
-            // Дополнительные действия
+// Дополнительные действия
 //         })
 //         .catch(error => {
 //             console.error('Ошибка:', error);
@@ -236,7 +253,7 @@ function displayMessage(message) {
 // function saveFormData() {
 //     const clientName = document.getElementById('name');
 //     const clientPhoneNumber = document.getElementById('phone-number');
-    
+
 //     localStorage.setItem('clientName', clientName.value);
 //     localStorage.setItem('clientPhoneNumber', clientPhoneNumber.value);
 // }
@@ -258,55 +275,63 @@ function displayMessage(message) {
 
 // Footer
 
-document.addEventListener('DOMContentLoaded', function() {
-    function scrollToElement(elementId) {
-        var element = document.getElementById(elementId);
-        if (element) {
-            window.scrollTo({
-                top: element.offsetTop,
-                behavior: 'smooth'
-            });
-        }
+document.addEventListener('DOMContentLoaded', function () {
+  function scrollToElement(elementId) {
+    var element = document.getElementById(elementId)
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth',
+      })
     }
+  }
 
-    document.getElementById('to-about-me-bottomnav').addEventListener('click', function() {
-        scrollToElement('about-me');
-    });
+  document
+    .getElementById('to-about-me-bottomnav')
+    .addEventListener('click', function () {
+      scrollToElement('about-me')
+    })
 
-    document.getElementById('to-services-bottomnav').addEventListener('click', function() {
-        scrollToElement('services');
-    });
+  document
+    .getElementById('to-services-bottomnav')
+    .addEventListener('click', function () {
+      scrollToElement('services')
+    })
 
-    document.getElementById('to-portfolio-bottomnav').addEventListener('click', function() {
-        scrollToElement('portfolio');
-    });
+  document
+    .getElementById('to-portfolio-bottomnav')
+    .addEventListener('click', function () {
+      scrollToElement('portfolio')
+    })
 
-    document.getElementById('to-contacts-bottomnav').addEventListener('click', function() {
-        scrollToElement('contacts');
-    });
-});
+  document
+    .getElementById('to-contacts-bottomnav')
+    .addEventListener('click', function () {
+      scrollToElement('contacts')
+    })
+})
 
 // Scroll To Top
 
-document.addEventListener("DOMContentLoaded", function() {
-    var scrollToTop = document.getElementById('scroll-to-top');
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollToTop = document.getElementById('scroll-to-top')
 
-    function toggleGotop() {
-        if (window.scrollY > 100) {
-            scrollToTop.style.opacity = '1';
-        } else {
-            scrollToTop.style.opacity = '0';
-        }
-    }    
+  function toggleGotop() {
+    if (window.scrollY > 100) {
+      scrollToTop.style.opacity = '1'
+    } else {
+      scrollToTop.style.opacity = '0'
+    }
+  }
 
-    window.addEventListener('scroll', function() {
-        toggleGotop();
-    });
+  window.addEventListener('scroll', function () {
+    toggleGotop()
+  })
 
-    scrollToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-});
+  scrollToTop.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  })
+})

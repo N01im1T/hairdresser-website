@@ -1,699 +1,1466 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      ,
+      maximum-scale="1.0,"
+      user-scalable="no"
+    />
     <title>Парикмахерская студия Ларисы Лавринайтис</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="../img/static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../img/static/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../img/static/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/static/favicon-16x16.png">
-    <link rel="icon" href="../img/static/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="../img/static/site.webmanifest">
-    <link rel="mask-icon" href="../img/static/safari-pinned-tab.svg" color="#000000">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-</head>
-<body>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../img/static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="../img/static/android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../img/static/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../img/static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../img/static/favicon-16x16.png"
+    />
+    <link rel="icon" href="../img/static/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="../img/static/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="../img/static/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+  <body>
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="navy-item">
-            <div id="nav-logo" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <meta itemprop="address" content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104">
-                <meta itemprop="name" content="Парикмахерская студия Ларисы Лавринайтис">
-                <meta itemprop="telephone" content="+79144071360">
-                
-                <a href="https://" itemprop="url" target="_blank" rel="noopener noreferrer">
-                    <img src="/img/site-logo.svg" alt="site-logo" itemprop="logo">
-                </a>
-            </div>
-            <nav>
-                <ul class="navbar">
-                    <li><a id="to-about-me-nav">Обо мне</a></li>
-                    <li><a id="to-services-nav">Услуги</a></li>
-                    <li><a id="to-portfolio-nav">Портфолио</a></li>
-                    <li><a id="to-contacts-nav">Контакты</a></li>
-                </ul>
-            </nav>
+      <div class="navy-item">
+        <div
+          id="nav-logo"
+          itemprop="publisher"
+          itemscope
+          itemtype="http://schema.org/Organization"
+        >
+          <meta
+            itemprop="address"
+            content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104"
+          />
+          <meta
+            itemprop="name"
+            content="Парикмахерская студия Ларисы Лавринайтис"
+          />
+          <meta itemprop="telephone" content="+79144071360" />
+
+          <a
+            href="https://"
+            itemprop="url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/img/site-logo.svg" alt="site-logo" itemprop="logo" />
+          </a>
         </div>
+        <nav>
+          <ul class="navbar">
+            <li><a id="to-about-me-nav">Обо мне</a></li>
+            <li><a id="to-services-nav">Услуги</a></li>
+            <li><a id="to-portfolio-nav">Портфолио</a></li>
+            <li><a id="to-contacts-nav">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section id="about" class="about">
-        <div class="about-wrapper" itemscope itemtype="http://schema.org/HairSalon">
-            <meta itemprop="address" content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104">
-            <meta itemprop="name" content="Парикмахерская студия Ларисы Лавринайтис">
-            <meta itemprop="telephone" content="+79144071360">
-            
-            <span itemprop="jobTitle">Парикмахер-колорист</span>
-            <span class="about-name" itemprop="name">Лариса Лавринайтис</span>
+      <div
+        class="about-wrapper"
+        itemscope
+        itemtype="http://schema.org/HairSalon"
+      >
+        <meta
+          itemprop="address"
+          content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104"
+        />
+        <meta
+          itemprop="name"
+          content="Парикмахерская студия Ларисы Лавринайтис"
+        />
+        <meta itemprop="telephone" content="+79144071360" />
+
+        <span itemprop="jobTitle">Парикмахер-колорист</span>
+        <span class="about-name" itemprop="name">Лариса Лавринайтис</span>
+      </div>
+
+      <div
+        id="about-call-to-action"
+        itemscope
+        itemtype="http://schema.org/HairSalon"
+      >
+        <meta
+          itemprop="address"
+          content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104"
+        />
+        <meta
+          itemprop="name"
+          content="Парикмахерская студия Ларисы Лавринайтис"
+        />
+        <meta itemprop="telephone" content="+79144071360" />
+
+        <p>Скидка 10% на стрижку или окрашивание при первом визите</p>
+
+        <a href="https://dikidi.ru/#widget=159452">
+          <button id="about-call-to-action-button" type="button">
+            Записаться
+          </button>
+        </a>
+
+        <a
+          title="2ГИС"
+          href="https://2gis.ru/khabarovsk/inside/4926447747603040/firm/70000001044850160?m=135.087086%2C48.468254%2F18.67"
+          target="_blank"
+          rel="noreferrer nofollow"
+          itemprop="url"
+        >
+          <span
+            itemprop="address"
+            itemscope
+            itemtype="http://schema.org/PostalAddress"
+          >
+            <meta itemprop="addressCountry" content="Россия" />
+            <meta itemprop="postalCode" content="680030" />
+            <meta itemprop="addressRegion" content="Хабаровский край" />
+            <span itemprop="addressLocality">г.Хабаровск</span>
+            <span itemprop="streetAddress"
+              >ул. Шеронова 8, корпус 3, офис 104</span
+            >
+          </span>
+        </a>
+      </div>
+
+      <div id="about-me" itemscope itemtype="http://schema.org/Person">
+        <div id="about-me-img">
+          <img src="/img/about/about-img.jpeg" alt="Лавринайтис Лариса" />
         </div>
 
-        <div id="about-call-to-action" itemscope itemtype="http://schema.org/HairSalon">
-            <meta itemprop="address" content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104">
-            <meta itemprop="name" content="Парикмахерская студия Ларисы Лавринайтис">
-            <meta itemprop="telephone" content="+79144071360">
-            
-            <p>Скидка 10% на стрижку или окрашивание при первом визите</p>
-            
-            <a href="https://dikidi.ru/#widget=159452">
-                <button id="about-call-to-action-button" type="button">
-                    Записаться
-                </button>
-            </a>
-            
-            <a title="2ГИС" href="https://2gis.ru/khabarovsk/inside/4926447747603040/firm/70000001044850160?m=135.087086%2C48.468254%2F18.67" target="_blank"  rel="noreferrer nofollow" itemprop="url">
-                <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <meta itemprop="addressCountry"content="Россия">
-                    <meta itemprop="postalCode" content="680030">
-                    <meta itemprop="addressRegion" content="Хабаровский край">
-                    <span itemprop="addressLocality">г.Хабаровск</span>
-                    <span itemprop="streetAddress">ул. Шеронова 8, корпус 3, офис 104</span>
-                </span>    
-            </a>
-        </div>
+        <div id="about-me-block" itemprop="description">
+          <h2>Обо мне</h2>
 
-        <div id="about-me" itemscope itemtype="http://schema.org/Person">
-            <div id="about-me-img">
-                <img src="/img/about/about-img.jpeg" alt="Лавринайтис Лариса">
-            </div>
-            
-            <div id="about-me-block" itemprop="description">
-                <h2>Обо мне</h2>
-                
-                <p>
-                    Здравствуйте, я Лариса - профессиональный
-                    парикмахер-колорист с более чем 19-летним
-                    опытом работы в индустрии красоты. Моя страсть
-                    к созданию красивых и стильных образов
-                    позволяет мне помогать своим клиентам
-                    выглядеть и чувствовать себя уверенно. Я
-                    постоянно совершенствую свои навыки, следуя
-                    последним тенденциям и техникам окрашивания.
-                    Моя цель - подчеркнуть индивидуальность
-                    каждого клиента и помочь им достичь желаемого
-                    результата. Добро пожаловать в мир красоты и
-                    стиля, где каждая прядь важна!
-                    <br>
-                    С моими работами вы можете ознакомиться в
-                </p>
-                
-                <button id="to-portfolio">
-                    Портфолио
-                </button>
-            </div>
+          <p>
+            Здравствуйте, я Лариса - профессиональный парикмахер-колорист с
+            более чем 19-летним опытом работы в индустрии красоты. Моя страсть к
+            созданию красивых и стильных образов позволяет мне помогать своим
+            клиентам выглядеть и чувствовать себя уверенно. Я постоянно
+            совершенствую свои навыки, следуя последним тенденциям и техникам
+            окрашивания. Моя цель - подчеркнуть индивидуальность каждого клиента
+            и помочь им достичь желаемого результата. Добро пожаловать в мир
+            красоты и стиля, где каждая прядь важна!
+            <br />
+            С моими работами вы можете ознакомиться в
+          </p>
+
+          <button id="to-portfolio">Портфолио</button>
         </div>
+      </div>
     </section>
     <section id="services">
-        <h2>
-            Услуги
-        </h2>
+      <h2>Услуги</h2>
 
-        <div id="services-wrapper">
-            <div id="women-haircuts">
-                <img src="../img/services/price-women-haircut-img.png" alt="Женские стрижки">
-                
-                <button title="Узнать стоимость" id="women-haircuts-button" type="button">
-                    Женские стрижки
-                </button>
-            </div>
-            <div id="men-haircuts">
-                <img src="../img/services/price-men-haircut-img.png" alt="Мужские стрижки">
-                
-                <button title="Узнать стоимость" id="men-haircuts-button" type="button">
-                    Мужские стрижки
-                </button>
-            </div>
-            <div id="coloring">
-                <img src="../img/services/price-coloring-img.png" alt="Окрашивание">
-                
-                <button title="Узнать стоимость" id="coloring-button" type="button">
-                    Окрашивание
-                </button>
-            </div>
+      <div id="services-wrapper">
+        <div id="women-haircuts">
+          <img
+            src="../img/services/price-women-haircut-img.png"
+            alt="Женские стрижки"
+          />
+
+          <button
+            title="Узнать стоимость"
+            id="women-haircuts-button"
+            type="button"
+          >
+            Женские стрижки
+          </button>
         </div>
+        <div id="men-haircuts">
+          <img
+            src="../img/services/price-men-haircut-img.png"
+            alt="Мужские стрижки"
+          />
 
-        <div id="prices" itemscope itemtype="http://schema.org/HairSalon">
-            <meta itemprop="address" content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104">
-            <meta itemprop="name" content="Парикмахерская студия Ларисы Лавринайтис">
-            <meta itemprop="telephone" content="+79144071360">
-            
-            <div  itemprop="hasOfferCatalog" itemscope itemtype="http://schema.org/OfferCatalog">
-                <meta itemprop="name" content="Список услуг парикмахерской">
-
-                <div id="overlay-women-haircuts" class="none">
-                    <div id="prices-women-haircuts" class="none" itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog">
-                        <meta itemprop="description" content="Профессиональные женские стрижки">
-                        
-                        <h3 itemprop="name">
-                            Женские стрижки
-                        </h3>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Стрижка (мытье, укладка, стайлинг)</span>
-                            <meta itemprop="description" content="Стрижка в зависимости от длины волос">
-
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="1500">1500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="3000">3000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name"  itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price">от 3500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Стрижка детская</span>
-                            <span class="price" itemprop="price" content="800">800</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Стрижка кончиков (машинкой-одним срезом)</span>
-                            <span class="price" itemprop="price" content="1000">1000</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Стрижка челки</span>
-                            <span class="price" itemprop="price" content="400">400</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Мытье головы, сушка феном по форме</span>
-                            <meta itemprop="description" content="Мытье головы, сушка феном по форме, в зависимости от длины волос">
-
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="1500">1500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="2500">2500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price" content="3000">3000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Укладка волос/локоны на плойку, утюг<br>(мытье, укладка, стайлинг)</span>
-                            <meta itemprop="description" content="Укладка волос/локоны на плойку, утюг (мытье, укладка, стайлинг), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="1500">1500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="2500">2500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price" content="3000">3000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <a href="https://dikidi.ru/#widget=159452">
-                            <button id="prices-women-haircuts-button" type="button">
-                                Записаться
-                            </button>
-                        </a>
-                    </div>
-                </div>
-
-                <div id="overlay-men-haircuts" class="none">
-                    <div id="prices-men-haircuts" class="none" itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog">
-                        <meta itemprop="description" content="Профессиональные мужские стрижки">
-                        
-                        <h3 itemprop="name">
-                            Мужские стрижки
-                        </h3>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Модельная стрижка</span>
-                            <span class="price" itemprop="price" content="900">900</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Стрижка на длинные волосы</span>
-                            <span class="price" itemprop="price" content="1000">1000</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Стрижка детская (до 7 лет)</span>
-                            <span class="price" itemprop="price" content="700">700</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Стрижка под машинку</span>
-
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Две насадки</span>
-                                <span class="price" itemprop="price" content="700">700</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Одна насадка</span>
-                                <span class="price" itemprop="price" content="500">500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Наголо</span>
-                                <span class="price" itemprop="price" content="500">500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service flex line-horisontal-single-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                            <meta itemprop="eligibleCustomerType" content="Human">
-                            <span class="name" itemprop="name">Коррекция стрижки</span>
-                            <span class="price" itemprop="price" content="700">700</span>
-                            <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                        </div>
-
-                        <a href="https://dikidi.ru/#widget=159452">
-                            <button id="prices-men-haircuts-button" type="button">
-                                Записаться
-                            </button>
-                        </a>
-                    </div>
-                </div>
-
-                <div id="overlay-coloring" class="none">
-                    <div id="prices-coloring" class="none" itemprop="itemListElement" itemscope itemtype="http://schema.org/OfferCatalog">
-                        <meta itemprop="description" content="Профессиональное окрашивание">
-                        
-                        <h3 itemprop="name">
-                            Окрашивание
-                        </h3>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Первичное окрашивание в блонд/обесцвечивание<br>длины + тонирование (мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Первичное окрашивание в блонд/обесцвечивание длины + тонирование (мытье, сушка, уход), в зависимости от длины волос">
-
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="5000">5000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="6500">6500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price" content="8000">8000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-                        
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Окрашивание в блонд/осветление корней<br>менее 2 см + тонирование (мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Окрашивание в блонд/осветление корней менее 2 см + тонирование (мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="5000">5000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="6500">6500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price" content="8000">8000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Окрашивание в блонд/осветление корней<br>более 2 см + тонирование (мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Окрашивание в блонд/осветление корней более 2 см + тонирование (мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="5500">5500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="7000">7000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price" content="8500">8500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Выход из черного (декапирование)</span>
-                            <meta itemprop="description" content="Выход из черного (декапирование), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name"  itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price"  itemprop="price">от 5000</span>
-                                <span class="currency"  itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price">от 10000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price">от 15000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal"  itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Мелирование + тонирование красителями<br>(мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Мелирование + тонирование красителями (мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="9000">9000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price">от 9500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Микромелирование + тонирование<br>(мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Микромелирование + тонирование (мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="9000">9000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price">от 9500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Сложные окрашивания/AIRTOUCH, рельефное<br>окрашивание(мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Сложные окрашивания/AIRTOUCH, рельефное окрашивание(мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="9000">9000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name"  itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price"  itemprop="price">от 9500</span>
-                                <span class="currency"  itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Сложные окрашивания/с дочищением длины,<br>прокрашиванием промежутков(мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Сложные окрашивания/с дочищением длины, прокрашиванием промежутков(мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="6000">6000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price" content="7500">7500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <div class="service line-horisontal" itemprop="itemListElement" itemscope itemtype="http://schema.org/Service">
-                            <span itemprop="name">Тонирование мелирования, сложного окрашивания<br>(мытье, сушка, уход)</span>
-                            <meta itemprop="description" content="Тонирование мелирования, сложного окрашивания (мытье, сушка, уход), в зависимости от длины волос">
-                            
-                            <div class="service-option top" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Короткие волосы (до 10 см)</span>
-                                <span class="price" itemprop="price" content="5000">5000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Средние волосы (до 20 см)</span>
-                                <span class="price" itemprop="price" content="5500">5500</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-
-                            <div class="service-option" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                <meta itemprop="eligibleCustomerType" content="Human">
-                                <span class="name" itemprop="name">Длинные волосы (от 20 см)</span>
-                                <span class="price" itemprop="price">от 6000</span>
-                                <span class="currency" itemprop="priceCurrency" content="RUB">руб.</span>
-                            </div>
-                        </div>
-
-                        <a href="https://dikidi.ru/#widget=159452">
-                            <button id="prices-coloring-button" type="button">
-                                Записаться
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+          <button
+            title="Узнать стоимость"
+            id="men-haircuts-button"
+            type="button"
+          >
+            Мужские стрижки
+          </button>
         </div>
+        <div id="coloring">
+          <img src="../img/services/price-coloring-img.png" alt="Окрашивание" />
+
+          <button title="Узнать стоимость" id="coloring-button" type="button">
+            Окрашивание
+          </button>
+        </div>
+      </div>
+
+      <div id="prices" itemscope itemtype="http://schema.org/HairSalon">
+        <meta
+          itemprop="address"
+          content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104"
+        />
+        <meta
+          itemprop="name"
+          content="Парикмахерская студия Ларисы Лавринайтис"
+        />
+        <meta itemprop="telephone" content="+79144071360" />
+
+        <div
+          itemprop="hasOfferCatalog"
+          itemscope
+          itemtype="http://schema.org/OfferCatalog"
+        >
+          <meta itemprop="name" content="Список услуг парикмахерской" />
+
+          <div id="overlay-women-haircuts" class="none">
+            <div
+              id="prices-women-haircuts"
+              class="none"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/OfferCatalog"
+            >
+              <meta
+                itemprop="description"
+                content="Профессиональные женские стрижки"
+              />
+
+              <h3 itemprop="name">Женские стрижки</h3>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name">Стрижка (мытье, укладка, стайлинг)</span>
+                <meta
+                  itemprop="description"
+                  content="Стрижка в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="1500"
+                    >1500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="3000"
+                    >3000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 3500</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name">Стрижка детская</span>
+                <span class="price" itemprop="price" content="800">800</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name"
+                  >Стрижка кончиков (машинкой-одним срезом)</span
+                >
+                <span class="price" itemprop="price" content="1000">1000</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name">Стрижка челки</span>
+                <span class="price" itemprop="price" content="400">400</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name">Мытье головы, сушка феном по форме</span>
+                <meta
+                  itemprop="description"
+                  content="Мытье головы, сушка феном по форме, в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="1500"
+                    >1500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="2500"
+                    >2500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="3000"
+                    >3000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Укладка волос/локоны на плойку, утюг<br />(мытье, укладка,
+                  стайлинг)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Укладка волос/локоны на плойку, утюг (мытье, укладка, стайлинг), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="1500"
+                    >1500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="2500"
+                    >2500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="3000"
+                    >3000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <a href="https://dikidi.ru/#widget=159452">
+                <button id="prices-women-haircuts-button" type="button">
+                  Записаться
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <div id="overlay-men-haircuts" class="none">
+            <div
+              id="prices-men-haircuts"
+              class="none"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/OfferCatalog"
+            >
+              <meta
+                itemprop="description"
+                content="Профессиональные мужские стрижки"
+              />
+
+              <h3 itemprop="name">Мужские стрижки</h3>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name">Модельная стрижка</span>
+                <span class="price" itemprop="price" content="900">900</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name"
+                  >Стрижка на длинные волосы</span
+                >
+                <span class="price" itemprop="price" content="1000">1000</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name"
+                  >Стрижка детская (до 7 лет)</span
+                >
+                <span class="price" itemprop="price" content="700">700</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name">Стрижка под машинку</span>
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name">Две насадки</span>
+                  <span class="price" itemprop="price" content="700">700</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name">Одна насадка</span>
+                  <span class="price" itemprop="price" content="500">500</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name">Наголо</span>
+                  <span class="price" itemprop="price" content="500">500</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service flex line-horisontal-single-block"
+                itemprop="offers"
+                itemscope
+                itemtype="http://schema.org/Offer"
+              >
+                <meta itemprop="eligibleCustomerType" content="Human" />
+                <span class="name" itemprop="name">Коррекция стрижки</span>
+                <span class="price" itemprop="price" content="700">700</span>
+                <span class="currency" itemprop="priceCurrency" content="RUB"
+                  >руб.</span
+                >
+              </div>
+
+              <a href="https://dikidi.ru/#widget=159452">
+                <button id="prices-men-haircuts-button" type="button">
+                  Записаться
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <div id="overlay-coloring" class="none">
+            <div
+              id="prices-coloring"
+              class="none"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/OfferCatalog"
+            >
+              <meta
+                itemprop="description"
+                content="Профессиональное окрашивание"
+              />
+
+              <h3 itemprop="name">Окрашивание</h3>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Первичное окрашивание в блонд/обесцвечивание<br />длины +
+                  тонирование (мытье, сушка, уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Первичное окрашивание в блонд/обесцвечивание длины + тонирование (мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="5000"
+                    >5000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="6500"
+                    >6500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="8000"
+                    >8000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Окрашивание в блонд/осветление корней<br />менее 2 см +
+                  тонирование (мытье, сушка, уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Окрашивание в блонд/осветление корней менее 2 см + тонирование (мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="5000"
+                    >5000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="6500"
+                    >6500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="8000"
+                    >8000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Окрашивание в блонд/осветление корней<br />более 2 см +
+                  тонирование (мытье, сушка, уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Окрашивание в блонд/осветление корней более 2 см + тонирование (мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="5500"
+                    >5500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="7000"
+                    >7000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="8500"
+                    >8500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name">Выход из черного (декапирование)</span>
+                <meta
+                  itemprop="description"
+                  content="Выход из черного (декапирование), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price">от 5000</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 10000</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 15000</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Мелирование + тонирование красителями<br />(мытье, сушка,
+                  уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Мелирование + тонирование красителями (мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="9000"
+                    >9000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 9500</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Микромелирование + тонирование<br />(мытье, сушка,
+                  уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Микромелирование + тонирование (мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="9000"
+                    >9000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 9500</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Сложные окрашивания/AIRTOUCH, рельефное<br />окрашивание(мытье,
+                  сушка, уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Сложные окрашивания/AIRTOUCH, рельефное окрашивание(мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="9000"
+                    >9000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 9500</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Сложные окрашивания/с дочищением длины,<br />прокрашиванием
+                  промежутков(мытье, сушка, уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Сложные окрашивания/с дочищением длины, прокрашиванием промежутков(мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="6000"
+                    >6000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="7500"
+                    >7500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="service line-horisontal"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/Service"
+              >
+                <span itemprop="name"
+                  >Тонирование мелирования, сложного окрашивания<br />(мытье,
+                  сушка, уход)</span
+                >
+                <meta
+                  itemprop="description"
+                  content="Тонирование мелирования, сложного окрашивания (мытье, сушка, уход), в зависимости от длины волос"
+                />
+
+                <div
+                  class="service-option top"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Короткие волосы (до 10 см)</span
+                  >
+                  <span class="price" itemprop="price" content="5000"
+                    >5000</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Средние волосы (до 20 см)</span
+                  >
+                  <span class="price" itemprop="price" content="5500"
+                    >5500</span
+                  >
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+
+                <div
+                  class="service-option"
+                  itemprop="offers"
+                  itemscope
+                  itemtype="http://schema.org/Offer"
+                >
+                  <meta itemprop="eligibleCustomerType" content="Human" />
+                  <span class="name" itemprop="name"
+                    >Длинные волосы (от 20 см)</span
+                  >
+                  <span class="price" itemprop="price">от 6000</span>
+                  <span class="currency" itemprop="priceCurrency" content="RUB"
+                    >руб.</span
+                  >
+                </div>
+              </div>
+
+              <a href="https://dikidi.ru/#widget=159452">
+                <button id="prices-coloring-button" type="button">
+                  Записаться
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="portfolio">
-        <h2>
-            Портфолио
-        </h2>
-        
-        <div id="slider-container" class="slider splide" itemscope itemtype="http://schema.org/ItemList">
-            <div class="splide__track">
-                <ul class="splide__list"></ul>
-            </div>
+      <h2>Портфолио</h2>
+
+      <div
+        id="slider-container"
+        class="slider splide"
+        itemscope
+        itemtype="http://schema.org/ItemList"
+      >
+        <div class="splide__track">
+          <ul class="splide__list"></ul>
         </div>
+      </div>
     </section>
     <div id="call-to-action">
-        <p>
-            <span>Скидка 10%</span>
-            <br>
-            новым клиентам на любую услугу при первом визите
-        </p>
-        
-        <form id="contact-form" method="post" action="/submit-form">
-            <input type="text" name="name" id="name" placeholder="Ваше имя">
-            <input type="tel" name="phone-number" id="phone-number" placeholder="+7(___)___-__-__">
-            <button id="call-to-action-button" type="submit">
-                Позвоните мне
-            </button>
-        </form>
+      <p>
+        <span>Скидка 10%</span>
+        <br />
+        новым клиентам на любую услугу при первом визите
+      </p>
 
-        <div id="message"></div>
+      <form id="contact-form" method="post" action="/submit-form">
+        <input type="text" name="name" id="name" placeholder="Ваше имя" />
+        <input
+          type="tel"
+          name="phone-number"
+          id="phone-number"
+          placeholder="+7(___)___-__-__"
+        />
+        <button id="call-to-action-button" type="submit">Позвоните мне</button>
+      </form>
+
+      <div id="message"></div>
     </div>
     <section id="contacts" itemscope itemtype="http://schema.org/HairSalon">
-        <meta itemprop="name" content="Парикмахерская студия Ларисы Лавринайтис">
-        
-        <h2>Контакты</h2>
-        
-        <section id="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <h3>Адрес:</h3>
-            
-            <a title="Адрес" href="https://2gis.ru/khabarovsk/inside/4926447747603040/firm/70000001044850160?m=135.087086%2C48.468254%2F18.67" target="_blank" rel="noopener nofollow">
-                <span itemprop="addressLocality">г. Хабаровск</span>, <br>
-                <span itemprop="streetAddress">ул. Шеронова 8, корпус 3, офис 104</span>
-            </a>
-        </section>
-        
-        <section id="telephone">
-            <h3>Телефон:</h3>
-            
-            <a title="Телефон для связи" href="tel:+79144071360" target="_blank" rel="noopener nofollow">
-                <span itemprop="telephone">+7 (914) 407-13-60</span>
-            </a>
-        </section>
-        
-        <section id="working-hours">
-            <h3>Время работы:</h3>
-            
-            <p title="Время работы" itemprop="openingHours">Вт-сб: 10:00-20:00</p>
-        </section>
-        
-        <section id="social-networks">
-            <h3>Социальные сети:</h3>
-            
-            <a href="https://www.instagram.com/lorilavri" target="_blank" rel="noopener noreferrer">
-                <img src="../img/contacts/instagram-logo.svg" alt="instagram-logo">
-            </a>
-            
-            <a href="https://vk.com/lorilavri" target="_blank" rel="noopener noreferrer">
-                <img src="../img/contacts/vk-logo.svg" alt="vk-logo">
-            </a>
-            
-            <a href="https://t.me/lorilavri" target="_blank" rel="noopener noreferrer">
-                <img src="../img/contacts/telegram-logo.svg" alt="telegram-logo">
-            </a>
-            
-            <a href="https://wa.me/79144071360" target="_blank" rel="noopener noreferrer">
-                <img src="../img/contacts/whatsapp-logo.svg" alt="whatsapp-logo">
-            </a>
-        </section>
-        
-        <div id="map" itemprop="hasMap" itemscope itemtype="http://schema.org/Map">
-            <a class="dg-widget-link" href="http://2gis.ru/khabarovsk/firm/70000001044850160/center/135.08724689483645,48.46922240954124/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">
-                Посмотреть на карте Хабаровска
-            </a>
-            
-            <div class="dg-widget-link">
-                <a href="http://2gis.ru/khabarovsk/firm/70000001044850160/photos/70000001044850160/center/135.08724689483645,48.46922240954124/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">
-                    Фотографии компании
-                </a>
-            </div>
-            
-            <div class="dg-widget-link">
-                <a href="http://2gis.ru/khabarovsk/center/135.087254,48.468699/zoom/16/routeTab/rsType/bus/to/135.087254,48.468699╎Парикмахерская студия Ларисы Лавринайтис?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">
-                    Найти проезд до Парикмахерская студия Ларисы Лавринайтис
-                </a>
-            </div>
-            
-            <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
-            <script charset="utf-8">new DGWidgetLoader({"width":886,"height":569,"borderColor":"#a3a3a3","pos":{"lat":48.46922240954124,"lon":135.08724689483645,"zoom":16},"opt":{"city":"khabarovsk"},"org":[{"id":"70000001044850160"}]});</script>
-            <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+      <meta
+        itemprop="name"
+        content="Парикмахерская студия Ларисы Лавринайтис"
+      />
+
+      <h2>Контакты</h2>
+
+      <section
+        id="address"
+        itemprop="address"
+        itemscope
+        itemtype="http://schema.org/PostalAddress"
+      >
+        <h3>Адрес:</h3>
+
+        <a
+          title="Адрес"
+          href="https://2gis.ru/khabarovsk/inside/4926447747603040/firm/70000001044850160?m=135.087086%2C48.468254%2F18.67"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          <span itemprop="addressLocality">г. Хабаровск</span>, <br />
+          <span itemprop="streetAddress"
+            >ул. Шеронова 8, корпус 3, офис 104</span
+          >
+        </a>
+      </section>
+
+      <section id="telephone">
+        <h3>Телефон:</h3>
+
+        <a
+          title="Телефон для связи"
+          href="tel:+79144071360"
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          <span itemprop="telephone">+7 (914) 407-13-60</span>
+        </a>
+      </section>
+
+      <section id="working-hours">
+        <h3>Время работы:</h3>
+
+        <p title="Время работы" itemprop="openingHours">Вт-сб: 10:00-20:00</p>
+      </section>
+
+      <section id="social-networks">
+        <h3>Социальные сети:</h3>
+
+        <a
+          href="https://www.instagram.com/lorilavri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../img/contacts/instagram-logo.svg" alt="instagram-logo" />
+        </a>
+
+        <a
+          href="https://vk.com/lorilavri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../img/contacts/vk-logo.svg" alt="vk-logo" />
+        </a>
+
+        <a
+          href="https://t.me/lorilavri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../img/contacts/telegram-logo.svg" alt="telegram-logo" />
+        </a>
+
+        <a
+          href="https://wa.me/79144071360"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="../img/contacts/whatsapp-logo.svg" alt="whatsapp-logo" />
+        </a>
+      </section>
+
+      <div
+        id="map"
+        itemprop="hasMap"
+        itemscope
+        itemtype="http://schema.org/Map"
+      >
+        <a
+          class="dg-widget-link"
+          href="http://2gis.ru/khabarovsk/firm/70000001044850160/center/135.08724689483645,48.46922240954124/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap"
+        >
+          Посмотреть на карте Хабаровска
+        </a>
+
+        <div class="dg-widget-link">
+          <a
+            href="http://2gis.ru/khabarovsk/firm/70000001044850160/photos/70000001044850160/center/135.08724689483645,48.46922240954124/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos"
+          >
+            Фотографии компании
+          </a>
         </div>
+
+        <div class="dg-widget-link">
+          <a
+            href="http://2gis.ru/khabarovsk/center/135.087254,48.468699/zoom/16/routeTab/rsType/bus/to/135.087254,48.468699╎Парикмахерская студия Ларисы Лавринайтис?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route"
+          >
+            Найти проезд до Парикмахерская студия Ларисы Лавринайтис
+          </a>
+        </div>
+
+        <script
+          charset="utf-8"
+          src="https://widgets.2gis.com/js/DGWidgetLoader.js"
+        ></script>
+        <script charset="utf-8">
+          new DGWidgetLoader({
+            width: 886,
+            height: 569,
+            borderColor: '#a3a3a3',
+            pos: { lat: 48.46922240954124, lon: 135.08724689483645, zoom: 16 },
+            opt: { city: 'khabarovsk' },
+            org: [{ id: '70000001044850160' }],
+          })
+        </script>
+        <noscript style="color: #c00; font-size: 16px; font-weight: bold"
+          >Виджет карты использует JavaScript. Включите его в настройках вашего
+          браузера.</noscript
+        >
+      </div>
     </section>
     <div id="footer" itemscope itemtype="http://schema.org/WPFooter">
-        <aside>
-            <meta name="robots" content="noindex, nofollow">
-            <img width="1256" height="1152" viewBox="0 0 251 218" src="../img/bottom-background-el.svg" alt="">
-        </aside>
+      <aside>
+        <meta name="robots" content="noindex, nofollow" />
+        <img
+          width="1256"
+          height="1152"
+          viewBox="0 0 251 218"
+          src="../img/bottom-background-el.svg"
+          alt=""
+        />
+      </aside>
 
-        <footer id="bottom-logo" itemprop="publisher" itemscope itemtype="http://schema.org/HairSalon">
-            <meta itemprop="address" content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104">
-            <meta itemprop="name" content="Парикмахерская студия Ларисы Лавринайтис">
-            <meta itemprop="telephone" content="+79144071360">
+      <footer
+        id="bottom-logo"
+        itemprop="publisher"
+        itemscope
+        itemtype="http://schema.org/HairSalon"
+      >
+        <meta
+          itemprop="address"
+          content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104"
+        />
+        <meta
+          itemprop="name"
+          content="Парикмахерская студия Ларисы Лавринайтис"
+        />
+        <meta itemprop="telephone" content="+79144071360" />
 
-            <a href="https://" itemprop="url" target="_blank" rel="noopener noreferrer">
-                <img src="/img/site-logo.svg" alt="site-logo" itemprop="logo">
-            </a>
-        </footer>
+        <a
+          href="https://"
+          itemprop="url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/img/site-logo.svg" alt="site-logo" itemprop="logo" />
+        </a>
+      </footer>
 
-        <p itemprop="founder" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="jobTitle">Парикмахер-колорист</span> <br>
-            <span itemprop="name">Лариса Лавринайтис</span>
+      <p itemprop="founder" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="jobTitle">Парикмахер-колорист</span> <br />
+        <span itemprop="name">Лариса Лавринайтис</span>
+      </p>
+
+      <nav>
+        <ul class="navbar">
+          <li><a id="to-about-me-bottomnav">Обо мне</a></li>
+          <li><a id="to-services-bottomnav">Услуги</a></li>
+          <li><a id="to-portfolio-bottomnav">Портфолио</a></li>
+          <li><a id="to-contacts-bottomnav">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <footer class="reserved-rights">
+        <p>
+          <span itemprop="copyrightHolder">© 2024 ИП “Лавринайтис Л.М.”</span>
+          <br />
+          Все права защищены.
         </p>
-
-        <nav>
-            <ul class="navbar">
-                <li><a id="to-about-me-bottomnav">Обо мне</a></li>
-                <li><a id="to-services-bottomnav">Услуги</a></li>
-                <li><a id="to-portfolio-bottomnav">Портфолио</a></li>
-                <li><a id="to-contacts-bottomnav">Контакты</a></li>
-            </ul>
-        </nav>
-
-        <footer class="reserved-rights">
-            <p>
-                <span itemprop="copyrightHolder">© 2024 ИП “Лавринайтис Л.М.”</span> <br>
-                Все права защищены.
-            </p>
-        </footer>
+      </footer>
     </div>
 
     <div id="scroll-to-top">
-        <div id="scroll-icon"></div>
+      <div id="scroll-icon"></div>
     </div>
 
-    <script type="text/javascript" src="https://dikidi.ru/assets/js/widget_record/widget2.min.js" defer></script>
+    <script
+      type="text/javascript"
+      src="https://dikidi.ru/assets/js/widget_record/widget2.min.js"
+      defer
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      defer
+    ></script>
     <script src="/js/main.js" defer></script>
-</body>
+  </body>
 </html>
