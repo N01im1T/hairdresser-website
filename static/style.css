@@ -24,6 +24,13 @@ body {
   margin: 0 auto;
 }
 
+h2 {
+  font-size: 6rem;
+  font-weight: 500;
+
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 button {
   font-size: 1.5rem;
   font-weight: 600;
@@ -103,7 +110,8 @@ a:visited {
 .header {
   position: relative;
 
-  padding: 1.25rem 2.5rem 0 2.5rem;
+  margin: 0.625rem 1.25rem 2.25rem 1.25rem;
+  padding: 0.625rem 1.25rem 2.25rem 1.25rem;
 }
 
 .header::after {
@@ -113,8 +121,9 @@ a:visited {
   right: 12rem;
 
   max-width: 64rem;
+  max-height: 55rem;
   width: 100%;
-  height: auto;
+  height: 100%;
 
   z-index: -1;
 }
@@ -143,7 +152,8 @@ a:visited {
 /* About */
 
 .about {
-  padding-top: 9rem;
+  margin: 2.25rem 3.75rem 2.25rem 3.75rem;
+  padding: 2.25rem 3.75rem 2.25rem 3.75rem;
 }
 
 .about-wrapper {
@@ -153,163 +163,152 @@ a:visited {
   font-size: 2rem;
   font-weight: 500;
 
-  padding-left: 7.7rem;
+  padding: 2.3rem 2.25rem 2.3rem 2.25rem;
 }
 
 .about-name {
   font-size: 8rem;
   font-weight: 500;
 
+  max-width: 823px;
+  width: 100%;
+
   text-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* About call to action */
-
-#about-call-to-action {
+.about-call-to-action {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
 
-  width: 686px;
-  height: 364px;
-  margin: 18px 0 0 123px;
+  max-width: 668px;
+  width: 100%;
+  margin-top: 1.125rem;
 }
 
-#about-call-to-action p {
-  font-size: 32px;
+.about-call-to-action p {
+  font-size: 2rem;
   font-weight: 500;
 }
 
-#about-call-to-action button {
-  margin: 90px 0 61px 0;
+.about-call-to-action-sign-up {
+  max-width: 345px;
+  width: 100%;
 }
 
-#about-call-to-action a {
-  display: block;
+.about-call-to-action-sign-up {
+  position: relative;
+}
 
-  font-size: 24px;
+.about-call-to-action-address {
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
-#about-call-to-action::before {
+.about-call-to-action::before {
   content: '';
   position: absolute;
-  left: -56px;
+  left: -10%;
 
-  background-color: #000;
+  background-color: var(--primary-color);
 
-  width: 2px;
-  height: 357px;
+  width: 0.125rem;
+  height: 18.75rem;
 }
 
-#about-call-to-action::after {
+.about-call-to-action-sign-up::after {
   content: '';
   position: absolute;
-  top: 217px;
-  left: 364px;
+  top: 50%;
+  left: 110%;
 
-  background-color: #000;
+  background-color: var(--primary-color);
 
-  width: 61px;
-  height: 2px;
+  width: 3.75rem;
+  height: 0.125rem;
 
   pointer-events: none;
 }
 
-#about-call-to-action button:hover {
+.about-call-to-action-button:hover {
   transform: scale(1.05);
 }
 
-/* About me */
+/* About main content */
 
-#about-me {
-  display: grid;
-}
-
-#about-me-img {
-  grid-column: 1;
-
-  width: 703px;
-  height: 1030px;
-  margin-top: 98px;
-}
-
-#about-me-block {
-  position: relative;
-  grid-column: 2;
-
-  width: 1147px;
-  height: 1030px;
-  margin: 98px 271px 0 0;
-}
-
-#about-me-block h2 {
-  position: absolute;
+.about-main-content {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 3.125rem;
 
-  font-size: 96px;
-  font-weight: 500;
-
-  margin: 20px 0 0 552px;
-
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 6rem 2rem 5rem 2rem;
 }
 
-#about-me-block p {
-  position: absolute;
-  justify-content: right;
+.about-me-img {
+  max-width: 703px;
+  width: 100%;
+  height: auto;
+}
 
-  font-size: 36px;
+.about-me-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.125rem;
+}
+
+.about-me-text-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 3.75rem;
+
+  font-size: 2.25rem;
   font-weight: 400;
-  text-align: justify;
-  text-align-last: right;
+  text-align: right;
 
-  width: 893px;
-  height: 644px;
-  margin: 151px 0 0 53px;
-
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-#about-me-block p:nth-of-type(1) br:last-child {
-  content: '';
-  display: block;
-
-  height: 60px;
+.about-me-text-block p {
+  max-width: 893px;
 }
 
-#about-me-block button {
-  position: absolute;
-  float: right;
-
-  margin: 795px 0 0 600px;
+.about-me-button-conteiner {
+  position: relative;
 }
 
-#about-me-block::after {
+.about-me-text::after {
   content: '';
   position: absolute;
+  top: 4%;
+  left: 110%;
 
-  background-color: #000;
+  background-color: var(--primary-color);
 
-  width: 2px;
-  height: 840px;
-  margin: 54px 0px 0px 1016px;
+  width: 0.125rem;
+  height: 79%;
 
   pointer-events: none;
 }
 
-#about-me-block::before {
+.about-me-button-conteiner::before {
   content: '';
   position: absolute;
+  top: 50%;
+  right: 110%;
 
-  background-color: #000;
+  background-color: var(--primary-color);
 
-  width: 61px;
-  height: 2px;
-  margin: 845px 0px 0px 524px;
+  width: 3.75rem;
+  height: 0.125rem;
 
   pointer-events: none;
 }
 
-#about-me-block button:hover {
+.about-me-text-button:hover {
   transform: scale(1.05);
 }
 
