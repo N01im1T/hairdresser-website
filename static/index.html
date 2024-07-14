@@ -1200,14 +1200,13 @@
         </div>
       </div>
     </section>
-    <div id="call-to-action">
+    <section class="call-to-action">
       <p>
-        <span>Скидка 10%</span>
-        <br />
+        <span>Скидка 10%</span><br/>
         новым клиентам на любую услугу при первом визите
       </p>
 
-      <form id="contact-form" method="post" action="/submit-form">
+      <form class="contact-form" method="post" action="/submit-form">
         <input type="text" name="name" id="name" placeholder="Ваше имя" />
         <input
           type="tel"
@@ -1215,11 +1214,16 @@
           id="phone-number"
           placeholder="+7(___)___-__-__"
         />
-        <button id="call-to-action-button" type="submit">Позвоните мне</button>
-      </form>
 
-      <div id="message"></div>
-    </div>
+        <button
+          id="call-to-action-button"
+          class="call-to-action-button"
+          type="submit"
+        >
+          Позвоните мне
+        </button>
+      </form>
+    </section>
     <section id="contacts" itemscope itemtype="http://schema.org/HairSalon">
       <meta
         itemprop="name"
