@@ -31,6 +31,11 @@ h2 {
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+h3 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
 button {
   font-size: 1.5rem;
   font-weight: 600;
@@ -696,7 +701,6 @@ input[type='tel']:focus {
 
   width: 16.25rem;
   height: 5rem;
-  padding: 0px 54px 0 54px;
 
   transition: transform 0.6s ease;
 }
@@ -709,33 +713,38 @@ input[type='tel']:focus {
 
 /* Contacts */
 
-#contacts {
-  position: relative;
-  display: grid;
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5.75rem;
 
-  margin: 0 auto;
-  margin-top: 107px;
-  margin-bottom: 278px;
+  margin: 0 2.25rem 0 2.25rem;
+  padding: 3.75rem;
 }
 
-#contacts h2 {
-  grid-column: 3;
-
-  font-size: 96px;
-  font-weight: 500;
+.contacts h2 {
   text-align: right;
-
-  margin-right: 150px;
-  margin-bottom: 92px;
-
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#contacts h3 {
-  font-size: 36px;
-  font-weight: 600;
+.contacts-container {
+  display: flex;
+  align-items: center;
+  column-gap: 6rem;
+}
 
-  margin-bottom: 25px;
+.contacts-container {
+  flex: 1 0 52rem;
+}
+
+.contacts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem;
+  row-gap: 10rem;
+}
+
+.contacts-wrapper section {
+  max-width: 340px;
 }
 
 #address,
@@ -792,7 +801,7 @@ input[type='tel']:focus {
   margin-right: 94px;
 }
 
-#contacts::after {
+/* #contacts::after {
   content: '';
   position: absolute;
 
@@ -805,7 +814,7 @@ input[type='tel']:focus {
   margin-left: 81px;
 
   pointer-events: none;
-}
+} */
 
 /* Footer */
 
