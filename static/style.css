@@ -729,12 +729,13 @@ input[type="tel"]:focus {
 
 .contacts-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 6rem;
 }
 
 .contacts-container > * {
-  flex: 1 0 52rem;
+  flex: 1 0 20rem;
 }
 
 .contacts-wrapper {
