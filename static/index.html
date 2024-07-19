@@ -1317,7 +1317,7 @@
           ></script>
           <script charset="utf-8">
             new DGWidgetLoader({
-              width: 886,
+              width: 825,
               height: 569,
               borderColor: '#a3a3a3',
               pos: { lat: 48.46922240954124, lon: 135.08724689483645, zoom: 16 },
@@ -1332,53 +1332,35 @@
         </div>
       </div>
     </section>
-    <section id="footer" itemscope itemtype="http://schema.org/WPFooter">
-      <footer
-        id="bottom-logo"
-        itemprop="publisher"
-        itemscope
-        itemtype="http://schema.org/HairSalon"
-      >
-        <meta
-          itemprop="address"
-          content="г.Хабаровск, ул. Шеронова 8, корпус 3, офис 104"
-        />
-        <meta
-          itemprop="name"
-          content="Парикмахерская студия Ларисы Лавринайтис"
-        />
-        <meta itemprop="telephone" content="+79144071360" />
-
+    <section id="footer" class="footer">
+      <footer class="footer-bottom-logo">
         <a
+          class="bottom-logo-url"
           href="https://"
-          itemprop="url"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/img/site-logo.svg" alt="site-logo" itemprop="logo" />
+          <img class="bottom-logo-img" src="/img/site-logo.svg" alt="site-logo"/>
         </a>
+        <p class="footer-person">
+          <span>Парикмахер-колорист</span>
+          <span>Лариса Лавринайтис</span>
+        </p>
       </footer>
 
-      <p itemprop="founder" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="jobTitle">Парикмахер-колорист</span> <br />
-        <span itemprop="name">Лариса Лавринайтис</span>
-      </p>
 
-      <nav>
+      <nav class="footer-nav-bar">
         <ul class="navbar">
-          <li><a id="to-about-me-bottomnav">Обо мне</a></li>
-          <li><a id="to-services-bottomnav">Услуги</a></li>
-          <li><a id="to-portfolio-bottomnav">Портфолио</a></li>
-          <li><a id="to-contacts-bottomnav">Контакты</a></li>
+          <li id="to-about-me-bottom-nav">Обо мне</li>
+          <li id="to-services-bottom-nav">Услуги</li>
+          <li id="to-portfolio-bottom-nav">Портфолио</li>
+          <li id="to-contacts-bottom-nav">Контакты</li>
         </ul>
       </nav>
 
-      <footer class="reserved-rights">
-        <p>
-          <span itemprop="copyrightHolder">© 2024 ИП “Лавринайтис Л.М.”</span>
-          <br />
-          Все права защищены.
-        </p>
+      <footer class="footer-reserved-rights">
+          <span>© 2024 ИП “Лавринайтис Л.М.”</span>
+          <span>Все права защищены.</span>
       </footer>
     </section>
 
