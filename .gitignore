@@ -2,5 +2,3 @@
 node_modules/
 telegram-bot/__pycache__/
 .env
-.prettierrc
-.vscode
